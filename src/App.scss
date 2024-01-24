@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -9,8 +11,21 @@
 }
 
 body {
-  font-family: Inter, serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
+  background-color: #000;
+  color: #fff;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -20,4 +35,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: #057af0;
+}
+
+a.active {
+  color: #057af0;
 }

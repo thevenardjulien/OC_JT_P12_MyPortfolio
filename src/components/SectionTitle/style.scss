@@ -1,0 +1,14 @@
+.SectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &__Square {
+    color: #057af0;
+  }
+  &__hr {
+    border: none;
+    height: 0.5px;
+    background-color: #fff;
+    margin-top: 5px;
+  }
+}

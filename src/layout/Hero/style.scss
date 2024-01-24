@@ -8,6 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 140px;
   &__left {
     width: 80%;
     padding: 50px 20px 20px 20px;
@@ -55,6 +56,7 @@
 
 @media screen and (min-width: 768px) {
   .Hero {
+    margin-bottom: 100px;
     &__logo {
       width: 50%;
     }
@@ -65,6 +67,7 @@
   .Hero {
     flex-wrap: nowrap;
     justify-content: space-between;
+    margin-bottom: 60px;
     &__left {
       width: 50%;
       background-color: transparent;

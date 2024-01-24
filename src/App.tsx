@@ -1,5 +1,5 @@
 import "./App.scss";
-import Project from "./components/Project";
+import SectionTitle from "./components/SectionTitle";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import Hero from "./layout/Hero";
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Hero />
       <main>
-        <Project />
+        <SectionTitle title="LATEST PROJECT" />
       </main>
       <Footer />
     </>

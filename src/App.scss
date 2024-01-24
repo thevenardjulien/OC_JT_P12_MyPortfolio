@@ -20,12 +20,14 @@ body {
 #root {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   min-height: 100vh;
-  padding: 20px;
 }
 
 main {
   flex: 1;
+  background-color: #0a0a0a;
+  padding-inline: 20px;
 }
 
 a {

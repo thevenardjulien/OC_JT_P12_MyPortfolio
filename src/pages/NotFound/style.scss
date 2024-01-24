@@ -1,0 +1,14 @@
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  &__wrapper {
+    text-align: center;
+    width: 375px;
+  }
+  &__title {
+    font-size: 4rem;
+  }
+}

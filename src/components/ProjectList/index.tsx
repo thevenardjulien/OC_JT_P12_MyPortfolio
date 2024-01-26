@@ -1,8 +1,9 @@
 import Project from "../Project";
 
 const ProjectList = ({ list }) => {
-  return list.map((project) => (
+  return list.map((project, index) => (
     <Project
+      key={index}
       img={project.img}
       alt={project.alt}
       category={project.category}

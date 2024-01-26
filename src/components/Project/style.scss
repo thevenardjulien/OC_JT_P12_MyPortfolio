@@ -1,0 +1,48 @@
+.Project {
+  display: flex;
+  flex-direction: column;
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  &__img {
+    aspect-ratio: 16 / 9;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  &__hr {
+    border: none;
+    height: 0.5px;
+    background-color: #fff;
+    margin-block: 20px;
+  }
+}
+
+.Infos {
+  &__category {
+    color: #057af0;
+    text-transform: uppercase;
+  }
+  &__title {
+    font-size: 1.4rem;
+    padding-block: 20px;
+  }
+  &__description {
+    color: #c0c0c0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Project {
+    display: flex;
+    &__content {
+      flex-wrap: nowrap;
+    }
+    &__imgWrapper {
+      min-width: 50%;
+    }
+  }
+}

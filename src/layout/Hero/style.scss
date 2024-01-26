@@ -29,9 +29,6 @@
     display: flex;
     justify-content: center;
   }
-  animation: hero-fade-out linear;
-  animation-timeline: view();
-  animation-range: exit;
 }
 
 @keyframes pulse {
@@ -45,12 +42,6 @@
 
   100% {
     transform: scale(0.95);
-  }
-}
-
-@keyframes hero-fade-out {
-  to {
-    opacity: 0;
   }
 }
 

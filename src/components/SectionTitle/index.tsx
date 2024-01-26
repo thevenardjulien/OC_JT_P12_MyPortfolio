@@ -9,7 +9,6 @@ const SectionTitle = ({ title }) => {
         <FontAwesomeIcon icon={faSquare} className="SectionTitle__Square" />
         <h3>{title}</h3>
       </div>
-      <hr className="SectionTitle__hr" />
     </>
   );
 };

@@ -1,10 +1,14 @@
+import { useState } from "react";
+import Modal from "../Modal";
 import "./style.scss";
 
 const Project = ({ img, alt, category, title, description }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="Project">
       <hr className="Project__hr" />
-      <div className="Project__content">
+      <div className="Project__content" onClick={() => setIsOpen(true)}>
         <div className="Project__imgWrapper">
           <img className="Project__img" src={img} alt={alt} />
         </div>
@@ -14,6 +18,7 @@ const Project = ({ img, alt, category, title, description }) => {
           <p className="Infos__description">{description}</p>
         </div>
       </div>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
   );
 };

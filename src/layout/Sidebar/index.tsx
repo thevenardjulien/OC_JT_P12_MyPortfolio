@@ -1,20 +1,11 @@
-import Medias from "../../components/Medias";
+import Socials from "../../components/Socials";
 import "./style.scss";
 
 const Sidebar = () => {
   return (
     <div className="Sidebar">
       <div className="Wrapper">
-        <Medias />
-      </div>
-      <div className="Wrapper">
-        <Medias />
-      </div>
-      <div className="Wrapper">
-        <Medias />
-      </div>
-      <div className="Wrapper">
-        <Medias />
+        <Socials />
       </div>
     </div>
   );

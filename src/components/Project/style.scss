@@ -4,14 +4,21 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 30px;
+    text-align: justify;
+    &:hover .Project__img {
+      transform: scale(1.05);
+    }
+  }
+  &__imgWrapper {
+    overflow: hidden;
   }
   &__img {
     aspect-ratio: 16 / 9;
     height: 100%;
     width: 100%;
     object-fit: cover;
-    overflow: hidden;
+    transition: transform 400ms linear;
   }
   &__hr {
     border: none;

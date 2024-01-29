@@ -15,7 +15,7 @@ function App() {
       <main>
         <div className="mainWrapper">
           <section className="mainWrapper__content">
-            <SectionTitle title="LATEST PROJECT" />
+            <SectionTitle title="LATEST PROJECTS" />
             <ProjectList list={latestProjects} />
           </section>
           <aside className="mainWrapper__aside">

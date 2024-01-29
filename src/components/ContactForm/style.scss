@@ -1,0 +1,34 @@
+.ContactForm {
+  &__fieldset {
+    padding: 50px;
+    background-color: rgba($color: #fff, $alpha: 0.075);
+    display: flex;
+    flex-direction: column;
+    border: 0;
+  }
+  &__legend {
+    padding-inline: 10px;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  &__label {
+    padding-right: 10px;
+    margin-bottom: 5px;
+  }
+  &__input {
+    margin-bottom: 30px;
+  }
+  &__textarea {
+    margin-bottom: 10px;
+    height: 150px;
+  }
+  &__button {
+    width: 100%;
+    margin: 5px 0 0 0;
+  }
+}
+
+.UserWrapper {
+  display: flex;
+  gap: 20px;
+}

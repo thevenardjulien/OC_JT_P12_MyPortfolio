@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
 import "./style.scss";
 
-const Button = ({ text, link }) => {
+interface Button {
+  text: string;
+  link: string;
+}
+
+const Button = ({ text, link }: Button) => {
   return (
     <NavLink to={link}>
       <button>{text}</button>

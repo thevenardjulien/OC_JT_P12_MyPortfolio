@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: #057af0;
+}
+
+a.active {
+  color: #057af0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+input,
+textarea {
+  outline: transparent;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: inherit;
+}

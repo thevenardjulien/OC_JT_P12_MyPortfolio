@@ -2,7 +2,11 @@ import { faSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.scss";
 
-const SectionTitle = ({ title }) => {
+interface SectionTitle {
+  title: string;
+}
+
+const SectionTitle = ({ title }: SectionTitle) => {
   return (
     <>
       <div className="SectionTitle">

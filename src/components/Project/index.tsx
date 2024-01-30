@@ -2,7 +2,15 @@ import { useState } from "react";
 import Modal from "../Modal";
 import "./style.scss";
 
-const Project = ({ img, alt, category, title, description }) => {
+interface Project {
+  img: string;
+  alt: string;
+  category: string;
+  title: string;
+  description: string;
+}
+
+const Project = ({ img, alt, category, title, description }: Project) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

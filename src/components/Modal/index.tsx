@@ -1,14 +1,22 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 import "./style.scss";
 
-const Modal = ({ setIsOpen }) => {
-  const closeModale = (e) => {
+interface ModalProps {
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Modal: React.FC<ModalProps> = ({ setIsOpen }) => {
+  const closeModale = (e: MouseEvent) => {
     e.stopPropagation();
     setIsOpen(false);
   };
   return (
-    <div className="overlay" onClick={(e) => closeModale(e)}>
+    <div
+      className="overlay"
+      onClick={(e: React.SyntheticEvent) => closeModale(e)}
+    >
       <div className="Modale" onClick={(e) => e.stopPropagation()}>
         <div className="Modale__xMark" onClick={(e) => closeModale(e)}>
           <FontAwesomeIcon icon={faCircleXmark} />

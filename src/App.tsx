@@ -1,11 +1,11 @@
 import "./App.scss";
+import { latestProjects } from "./assets/datas/latestsProjects";
 import Hero from "./components/Hero";
 import ProjectList from "./components/ProjectList";
 import SectionTitle from "./components/SectionTitle";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import Sidebar from "./layout/Sidebar";
-import { latestProjects } from "./services/datas/latestsProjects";
 
 function App() {
   return (

@@ -4,10 +4,20 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
+    padding: 40px;
     gap: 30px;
     text-align: justify;
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.025);
+      cursor: pointer;
+    }
     &:hover .Project__img {
       transform: scale(1.05);
+    }
+    &:hover .Infos__title {
+      color: #057af0;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
   }
   &__imgWrapper {
@@ -24,17 +34,20 @@
     border: none;
     height: 0.5px;
     background-color: #fff;
-    margin-block: 20px;
   }
 }
 
 .Infos {
   &__category {
-    color: #057af0;
+    width: fit-content;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
     text-transform: uppercase;
+    background-color: #057af0;
   }
   &__title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     padding-block: 20px;
   }
   &__description {

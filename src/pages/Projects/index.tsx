@@ -1,8 +1,9 @@
+import { latestProjects } from "../../assets/datas/latestsProjects";
 import ProjectList from "../../components/ProjectList";
 import SectionTitle from "../../components/SectionTitle";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
-import { latestProjects } from "../../services/datas/latestsProjects";
+import "./style.scss";
 
 const Projects = () => {
   return (

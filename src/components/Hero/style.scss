@@ -1,75 +1,42 @@
 .Hero {
-  height: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  height: fit-content;
+  padding-block: 40px;
   background-image: url("../../assets/images/hero-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 140px;
-  &__left {
-    width: 80%;
-    padding: 50px 20px 20px 20px;
-    background-color: rgba($color: #000, $alpha: 0.8);
+  margin-bottom: 60px;
+  &__wrapper {
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
-  &__logo {
-    transform: scale(1);
-    animation: pulse 2s infinite;
-    width: 80%;
-  }
-  &__right {
-    margin: 0 auto;
-    width: 80%;
+  &__content {
+    width: fit-content;
     background-color: rgba($color: #000, $alpha: 0.8);
-    padding: 50px;
+    padding: 40px;
     display: flex;
-    justify-content: center;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-  }
-
-  70% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0.95);
+    flex-direction: column;
   }
 }
 
 @media screen and (min-width: 768px) {
   .Hero {
-    margin-bottom: 100px;
-    &__logo {
-      width: 50%;
+    padding-block: 80px;
+    justify-content: flex-end;
+    &__wrapper {
+      margin: 0 auto;
+      width: 80%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
   .Hero {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    &__left {
-      width: 50%;
-      background-color: transparent;
-      padding: 0;
-    }
-    &__logo {
-      width: 60%;
-    }
-    &__right {
-      width: 50%;
-      width: fit-content;
-    }
+    padding-block: 120px;
   }
 }

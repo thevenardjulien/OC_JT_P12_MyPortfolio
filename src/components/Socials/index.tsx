@@ -7,27 +7,21 @@ const Socials = () => {
   return (
     <div className="Socials">
       <p>Join me on :</p>
-      <hr className="Socials__hr" />
+      <hr />
       <ul>
         <li>
-          <Link
-            className="Socials__links"
-            to="https://github.com/thevenardjulien"
-          >
-            <div className="Socials__icon">
-              <FontAwesomeIcon icon={faGithub} />
-            </div>
+          <Link to="https://github.com/thevenardjulien">
+            <FontAwesomeIcon icon={faGithub} className="icon" color="#fff" />
             GitHub
           </Link>
         </li>
         <li>
-          <Link
-            className="Socials__links"
-            to="https://www.linkedin.com/in/julien-thevenard-951988168/"
-          >
-            <div className="Socials__icon">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </div>
+          <Link to="https://www.linkedin.com/in/julien-thevenard-951988168/">
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="icon"
+              color="rgb(10,102,194)"
+            />
             LinkedIn
           </Link>
         </li>

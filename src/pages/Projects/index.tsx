@@ -10,8 +10,8 @@ const Projects = () => {
     <>
       <Header />
       <main>
-        <section className="mainWrapper__content">
-          <SectionTitle title="LATEST PROJECT" />
+        <section className="contentWrapper">
+          <SectionTitle title="ALL PROJECTS" />
           <ProjectList list={latestProjects} />
         </section>
       </main>

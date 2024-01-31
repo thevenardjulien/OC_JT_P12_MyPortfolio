@@ -1,6 +1,6 @@
 import { localhost } from "../config";
 
-const register = async (userName, email, password) => {
+const register = async (userName: string, email: string, password: string) => {
   try {
     const response = await fetch(`${localhost}/api/auth/local/register`, {
       method: "POST",
@@ -23,7 +23,7 @@ const register = async (userName, email, password) => {
   }
 };
 
-const login = async (identifier, password) => {
+const login = async (identifier: string, password: string) => {
   try {
     const response = await fetch(`${localhost}/api/auth/local`, {
       method: "POST",

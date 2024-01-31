@@ -20,7 +20,6 @@ const Admin = () => {
   const connect = async (userName: string, password: string) => {
     try {
       const response = await login(userName, password);
-      console.log(response);
       localStorage.setItem("token", response.jwt);
     } catch (error) {
       console.log(error);

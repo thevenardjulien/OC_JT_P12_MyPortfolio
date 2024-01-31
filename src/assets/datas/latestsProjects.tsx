@@ -1,3 +1,7 @@
+import "../images/eldenringwp.jpg";
+import "../images/hero-bg.jpg";
+import "../images/zeldawp.jpg";
+
 export const latestProjects = [
   {
     img: "./src/assets/images/hero-bg.jpg",

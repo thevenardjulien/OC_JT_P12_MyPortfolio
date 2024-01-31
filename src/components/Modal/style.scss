@@ -26,5 +26,9 @@
     top: 20px;
     right: 20px;
     font-size: 2rem;
+    &:hover {
+      cursor: pointer;
+      color: #057af0;
+    }
   }
 }

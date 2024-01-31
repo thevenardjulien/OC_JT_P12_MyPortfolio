@@ -1,8 +1,7 @@
 .Hero {
   height: fit-content;
   padding-block: 40px;
-  background-image: url("../../assets/images/hero-bg.jpg");
-  background-position: center;
+  background-image: url("../../assets/images/undertale.png");
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 60px;
@@ -25,6 +24,7 @@
   .Hero {
     padding-block: 80px;
     justify-content: flex-end;
+
     &__wrapper {
       margin: 0 auto;
       width: 80%;
@@ -37,6 +37,7 @@
 
 @media screen and (min-width: 1024px) {
   .Hero {
+    background-position: 0px -100px;
     padding-block: 120px;
   }
 }

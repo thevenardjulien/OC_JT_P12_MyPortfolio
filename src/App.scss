@@ -38,10 +38,10 @@ main {
     flex-wrap: nowrap;
     gap: 50px;
     &__content {
-      width: 80%;
+      min-width: 80%;
     }
     &__aside {
-      width: 20%;
+      min-width: 20%;
     }
   }
 }

@@ -1,28 +1,17 @@
 import Project from "../Project";
 
-interface ProjectContent {
-  img: string;
-  alt: string;
-  category: string;
-  title: string;
-  description: string;
-}
-
-interface ProjectListProps {
-  list: ProjectContent[];
-}
-
-const ProjectList: React.FC<ProjectListProps> = ({ list }) => {
-  return list.map((project: ProjectContent, index: number) => (
-    <Project
-      key={index}
-      img={project.img}
-      alt={project.alt}
-      category={project.category}
-      title={project.title}
-      description={project.description}
-    />
-  ));
+const ProjectList = ({ postsList }) => {
+  return postsList
+    .toReversed()
+    .map((post, index) => (
+      <Project
+        key={index}
+        category={post.attributes.Category}
+        title={post.attributes.Title}
+        description={post.attributes.Description}
+        imageUrl={post.attributes.Image.data.attributes.formats.medium.url}
+      />
+    ));
 };
 
 export default ProjectList;

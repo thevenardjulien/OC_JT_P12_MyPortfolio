@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { localhost } from "../../config";
 import Modal from "../Modal";
 import "./style.scss";
 
 const Project = ({ category, title, description, imageUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(`${localhost}${imageUrl}`);
-  });
 
   return (
     <div className="Project">

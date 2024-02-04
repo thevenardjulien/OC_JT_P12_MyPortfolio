@@ -13,7 +13,6 @@ import indesignIcon from "../../assets/images/icons/indesign.png";
 import photoshopIcon from "../../assets/images/icons/photoshop.png";
 import premiereproIcon from "../../assets/images/icons/premierepro.png";
 import typeScriptIcon from "../../assets/images/icons/typescript.png";
-import "./style.scss";
 
 const Tools = () => {
   return (

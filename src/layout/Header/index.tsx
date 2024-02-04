@@ -1,6 +1,7 @@
 import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAppStore } from "../../store/store";
 import "./style.scss";
 
@@ -12,6 +13,19 @@ const Header = () => {
     isLogged,
     updateIsLogged,
   } = useAppStore();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.addEventListener("keydown", (e) => {
+      if (
+        (e.altKey === true && e.key === "l") ||
+        (e.ctrlKey === true && e.key === "l")
+      ) {
+        navigate("/Login");
+      }
+    });
+  }, []);
 
   const handleClick = () => {
     localStorage.clear();

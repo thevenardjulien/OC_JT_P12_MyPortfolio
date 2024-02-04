@@ -1,8 +1,9 @@
 import Project from "../Project";
 
-const ProjectList = ({ postsList }) => {
+const ProjectList = ({ postsList, listSize }) => {
   return postsList
     .toReversed()
+    .slice(0, listSize)
     .map((post, index) => (
       <Project
         key={index}

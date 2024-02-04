@@ -33,7 +33,7 @@ function App() {
             {!isLoading ? (
               <>
                 <SectionTitle title="SELECTED PROJECTS" />
-                <ProjectList postsList={posts} />
+                <ProjectList postsList={posts} listSize="3" />
               </>
             ) : (
               "Loading..."

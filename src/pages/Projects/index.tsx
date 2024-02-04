@@ -29,7 +29,7 @@ const Projects = () => {
           {!isLoading ? (
             <>
               <SectionTitle title="ALL PROJECTS" />
-              <ProjectList postsList={posts} />
+              <ProjectList postsList={posts} listSize={Infinity} />
             </>
           ) : (
             "Loading...."

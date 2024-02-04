@@ -1,6 +1,8 @@
+@use "../../assets/scss/colors.scss" as *;
+
 button {
-  background-color: #057af0;
-  color: #fff;
+  background-color: $main-color;
+  color: $primary-font-color;
   padding: 8px 20px;
   margin: 20px;
   font-weight: 00;

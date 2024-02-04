@@ -1,3 +1,5 @@
+@use "../../assets/scss/colors.scss" as *;
+
 .dashboard__wrapper {
   display: flex;
   flex-direction: column;
@@ -8,5 +10,5 @@
 
 .module {
   padding: 50px;
-  background-color: rgba($color: #fff, $alpha: 0.075);
+  background-color: $tiertary-background;
 }

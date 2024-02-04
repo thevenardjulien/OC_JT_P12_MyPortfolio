@@ -1,7 +1,9 @@
+@use "../../assets/scss/colors.scss" as *;
+
 .ContactForm {
   &__fieldset {
     padding: 50px;
-    background-color: rgba($color: #fff, $alpha: 0.075);
+    background-color: $tiertary-background;
     display: flex;
     flex-direction: column;
     border: 0;

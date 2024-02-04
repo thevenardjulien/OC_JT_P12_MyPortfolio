@@ -1,3 +1,4 @@
+@use "../../assets/scss/colors.scss" as *;
 .Project {
   display: flex;
   flex-direction: column;
@@ -8,14 +9,14 @@
     gap: 30px;
     text-align: justify;
     &:hover {
-      background-color: rgba($color: #fff, $alpha: 0.025);
+      background-color: rgba($color: $hr-background, $alpha: 0.025);
       cursor: pointer;
     }
     &:hover .Project__img {
       transform: scale(1.05);
     }
     &:hover .Infos__title {
-      color: #057af0;
+      color: $main-color;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
@@ -33,7 +34,7 @@
   &__hr {
     border: none;
     height: 0.5px;
-    background-color: #fff;
+    background-color: $hr-background;
   }
 }
 
@@ -44,14 +45,14 @@
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    background-color: #057af0;
+    background-color: $main-color;
   }
   &__title {
     font-size: 1.5rem;
     padding-block: 20px;
   }
   &__description {
-    color: #c0c0c0;
+    color: $project-description-color;
   }
 }
 

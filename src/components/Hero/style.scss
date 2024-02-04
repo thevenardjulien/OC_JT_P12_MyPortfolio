@@ -1,3 +1,4 @@
+@use "../../assets/scss/colors.scss" as *;
 .Hero {
   height: fit-content;
   padding-block: 40px;
@@ -13,7 +14,7 @@
   }
   &__content {
     width: fit-content;
-    background-color: rgba($color: #000, $alpha: 0.8);
+    background-color: $tiertary-background;
     padding: 40px;
     display: flex;
     flex-direction: column;

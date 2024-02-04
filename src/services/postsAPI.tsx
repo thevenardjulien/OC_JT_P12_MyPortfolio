@@ -21,15 +21,16 @@ const findPosts = async () => {
   }
 };
 
-const addPost = async (title, category, description, image) => {
+const addPost = async (formData) => {
+  const token = localStorage.getItem("token") || null;
   try {
     const response = await fetch(`${localhost}/api/posts`, {
       method: "POST",
       headers: {
         Accept: "Application/json",
-        "Content-type": "Application/json",
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ title, category, description, image }),
+      body: formData,
     });
 
     if (!response.ok) {

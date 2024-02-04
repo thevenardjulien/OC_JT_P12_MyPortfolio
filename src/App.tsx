@@ -10,11 +10,15 @@ import { findPosts } from "./services/postsAPI";
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getPosts = async () => {
       const responsePosts = await findPosts();
-      setPosts(responsePosts.data);
+      if (responsePosts.data.length > 0) {
+        setPosts(responsePosts.data);
+        setIsLoading(false);
+      }
     };
     getPosts();
   }, []);
@@ -25,12 +29,16 @@ function App() {
       <Hero />
       <main>
         <div className="mainWrapper">
-          {posts.length === 0 ? null : (
-            <section className="mainWrapper__content">
-              <SectionTitle title="LATEST PROJECTS" />
-              <ProjectList postsList={posts} />
-            </section>
-          )}
+          <section className="mainWrapper__content">
+            {!isLoading ? (
+              <>
+                <SectionTitle title="SELECTED PROJECTS" />
+                <ProjectList postsList={posts} />
+              </>
+            ) : (
+              "Loading..."
+            )}
+          </section>
           <aside className="mainWrapper__aside">
             <Sidebar />
           </aside>

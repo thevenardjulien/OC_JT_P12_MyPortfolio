@@ -8,24 +8,33 @@ import "./style.scss";
 
 const Projects = () => {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getPosts = async () => {
       const responsePosts = await findPosts();
-      setPosts(responsePosts.data);
+      if (responsePosts.data.length > 0) {
+        setPosts(responsePosts.data);
+        setIsLoading(false);
+      }
     };
     getPosts();
   }, []);
+
   return (
     <>
       <Header />
       <main>
-        {posts && (
-          <section className="contentWrapper">
-            <SectionTitle title="ALL PROJECTS" />
-            <ProjectList postsList={posts} />
-          </section>
-        )}
+        <section className="contentWrapper">
+          {!isLoading ? (
+            <>
+              <SectionTitle title="ALL PROJECTS" />
+              <ProjectList postsList={posts} />
+            </>
+          ) : (
+            "Loading...."
+          )}
+        </section>
       </main>
       <Footer />
     </>

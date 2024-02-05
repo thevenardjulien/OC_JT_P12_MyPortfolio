@@ -2,7 +2,7 @@ import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useAppStore } from "../../store/store";
+import { useAppStore } from "../../store/userStore";
 import "./style.scss";
 
 const Header = () => {

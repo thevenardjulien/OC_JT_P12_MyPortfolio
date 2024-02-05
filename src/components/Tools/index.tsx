@@ -1,17 +1,9 @@
-import {
-  faCss3Alt,
-  faHtml5,
-  faJs,
-  faReact,
-  faSass,
-} from "@fortawesome/free-brands-svg-icons";
+import { faJs, faReact } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import figmaIcon from "../../assets/images/icons/figma.png";
 import illustratorIcon from "../../assets/images/icons/illustrator.png";
-import indesignIcon from "../../assets/images/icons/indesign.png";
 import photoshopIcon from "../../assets/images/icons/photoshop.png";
-import premiereproIcon from "../../assets/images/icons/premierepro.png";
 import typeScriptIcon from "../../assets/images/icons/typescript.png";
 
 const Tools = () => {
@@ -20,7 +12,7 @@ const Tools = () => {
       <p>ToolsList :</p>
       <hr />
       <ul>
-        <li>
+        {/* <li>
           <Link to="/">
             <FontAwesomeIcon
               icon={faHtml5}
@@ -34,8 +26,8 @@ const Tools = () => {
             />
             HTML/CSS
           </Link>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link to="/">
             <FontAwesomeIcon
               icon={faSass}
@@ -44,7 +36,7 @@ const Tools = () => {
             />
             SASS
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/">
             <FontAwesomeIcon
@@ -83,12 +75,12 @@ const Tools = () => {
             Photoshop
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/">
             <img src={indesignIcon} alt="Indesign Icon" className="icon" />
             InDesign
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/">
             <img
@@ -99,7 +91,7 @@ const Tools = () => {
             Illustrator
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/">
             <img
               src={premiereproIcon}
@@ -108,7 +100,7 @@ const Tools = () => {
             />
             Premiere Pro
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

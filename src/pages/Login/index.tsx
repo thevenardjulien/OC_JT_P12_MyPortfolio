@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import { login } from "../../services/userAPI";
-import { useAppStore } from "../../store/store";
+import { useAppStore } from "../../store/userStore";
 import "./style.scss";
 
 const Login = () => {

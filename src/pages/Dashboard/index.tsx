@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
-import { useAppStore } from "../../store/store";
+import { useAppStore } from "../../store/userStore";
 import AddPostModule from "./AddPostModule";
 import "./style.scss";
 

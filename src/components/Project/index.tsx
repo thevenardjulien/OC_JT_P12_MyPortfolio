@@ -23,7 +23,15 @@ const Project = ({ category, title, description, imageUrl }) => {
           <p className="Infos__description">{description}</p>
         </div>
       </div>
-      {isOpen && <Modal setIsOpen={setIsOpen} />}
+      {isOpen && (
+        <Modal
+          setIsOpen={setIsOpen}
+          category={category}
+          title={title}
+          description={description}
+          imageUrl={imageUrl}
+        />
+      )}
     </div>
   );
 };

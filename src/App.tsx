@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
 import Hero from "./components/Hero";
+import Loader from "./components/Loader";
 import ProjectList from "./components/ProjectList";
 import SectionTitle from "./components/SectionTitle";
 import Footer from "./layout/Footer";
@@ -36,7 +37,7 @@ function App() {
                 <ProjectList postsList={posts} listSize="3" />
               </>
             ) : (
-              "Loading..."
+              <Loader />
             )}
           </section>
           <aside className="mainWrapper__aside">

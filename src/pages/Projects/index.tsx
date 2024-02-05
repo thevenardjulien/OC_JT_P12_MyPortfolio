@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loader from "../../components/Loader";
 import ProjectList from "../../components/ProjectList";
 import SectionTitle from "../../components/SectionTitle";
 import Footer from "../../layout/Footer";
@@ -32,7 +33,7 @@ const Projects = () => {
               <ProjectList postsList={posts} listSize={Infinity} />
             </>
           ) : (
-            "Loading...."
+            <Loader />
           )}
         </section>
       </main>

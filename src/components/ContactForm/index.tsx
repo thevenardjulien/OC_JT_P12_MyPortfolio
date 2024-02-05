@@ -19,7 +19,7 @@ const ContactForm = () => {
         <div className="UserWrapper">
           <div>
             <label className="ContactForm__label" htmlFor="userName">
-              UserName
+              Name
             </label>
             <input
               className="ContactForm__input"

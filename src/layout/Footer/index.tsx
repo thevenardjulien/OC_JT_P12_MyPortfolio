@@ -3,7 +3,7 @@ import "./style.scss";
 const Footer = () => {
   return (
     <footer>
-      <p>Copyright 2024 Julien THEVENARD</p>
+      <p>Copyright 2024 © Julien THEVENARD</p>
     </footer>
   );
 };

@@ -16,9 +16,9 @@ a {
     text-decoration: underline;
     text-underline-offset: 2px;
     color: $main-color;
-    &.active {
-      color: $main-color;
-    }
+  }
+  &.active {
+    color: $main-color;
   }
 }
 
@@ -31,7 +31,8 @@ li {
 }
 
 input,
-textarea {
+textarea,
+select {
   outline: transparent;
   padding: 5px 10px;
   font-family: inherit;

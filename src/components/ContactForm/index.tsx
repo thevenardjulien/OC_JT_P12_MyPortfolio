@@ -4,12 +4,14 @@ import "./style.scss";
 const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const userName = e.currentTarget.userName.value;
-    const email = e.currentTarget.Email.value;
-    const message = e.currentTarget.Message.value;
-    const formData = { userName, email, message };
-    setFormResponse("Your form has been sent!");
+    const { userName, email, message } = e.currentTarget;
+    const formData = {
+      userName: userName.value,
+      email: email.value,
+      message: message.value,
+    };
     console.log(formData);
+    setFormResponse("Your form has been sent!");
   };
   const [formResponse, setFormResponse] = useState<string | null>(null);
   return (
@@ -26,27 +28,33 @@ const ContactForm = () => {
               type="text"
               id="userName"
               name="userName"
+              required
+              minLength={3}
+              maxLength={126}
             />
           </div>
           <div>
-            <label className="ContactForm__label" htmlFor="Email">
+            <label className="ContactForm__label" htmlFor="email">
               Email
             </label>
             <input
               className="ContactForm__input"
               type="email"
-              id="Email"
-              name="Email"
+              id="email"
+              name="email"
+              required
+              maxLength={126}
             />
           </div>
         </div>
-        <label className="ContactForm__label" htmlFor="Message">
+        <label className="ContactForm__label" htmlFor="message">
           Your message :
         </label>
         <textarea
           className="ContactForm__textarea"
-          id="Message"
-          name="Message"
+          id="message"
+          name="message"
+          required
         />
         <button className="ContactForm__button" type="submit">
           Submit

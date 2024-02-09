@@ -1,6 +1,15 @@
 import { create } from "zustand";
 
-export const useAppStore = create((set) => ({
+interface AppStore {
+  updateIdentifier: (identifier: string) => void;
+  updateToken: (token: string) => void;
+  isLogged: boolean;
+  updateIsLogged: (isLogged: boolean) => void;
+  token: string;
+  identifier: string;
+}
+
+export const useAppStore = create<AppStore>((set) => ({
   identifier: localStorage.getItem("identifier") || "",
   updateIdentifier(id) {
     set({ identifier: id });

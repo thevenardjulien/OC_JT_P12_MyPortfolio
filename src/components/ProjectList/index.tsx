@@ -4,7 +4,7 @@ const ProjectList = ({ postsList, listSize }) => {
   return postsList
     .toReversed()
     .slice(0, listSize)
-    .map((post, index) => (
+    .map((post, index: number) => (
       <Project
         key={index}
         category={post.attributes.Category}

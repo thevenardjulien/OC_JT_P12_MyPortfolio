@@ -7,10 +7,10 @@ const ProjectList = ({ postsList, listSize }) => {
     .map((post, index: number) => (
       <Project
         key={index}
-        category={post.attributes.Category}
-        title={post.attributes.Title}
-        description={post.attributes.Description}
-        imageUrl={post.attributes.Image.data.attributes.formats.medium.url}
+        category={post.Category}
+        title={post.Title}
+        description={post.Description}
+        imageUrl={post.ImageUrl}
       />
     ));
 };

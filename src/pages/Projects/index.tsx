@@ -1,26 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { PostsList } from "../../assets/datas/PostsList";
 import Loader from "../../components/Loader";
 import ProjectList from "../../components/ProjectList";
 import SectionTitle from "../../components/SectionTitle";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
-import { findPosts } from "../../services/postsAPI";
 import "./style.scss";
 
 const Projects = () => {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const responsePosts = await findPosts();
-      if (responsePosts.data.length > 0) {
-        setPosts(responsePosts.data);
-        setIsLoading(false);
-      }
-    };
-    getPosts();
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
+  const posts = PostsList;
 
   return (
     <>

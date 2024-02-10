@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./style.scss";
 
 const ContactForm = () => {
@@ -11,9 +10,7 @@ const ContactForm = () => {
       message: message.value,
     };
     console.log(formData);
-    setFormResponse("Your form has been sent!");
   };
-  const [formResponse, setFormResponse] = useState<string | null>(null);
   return (
     <form className="ContactForm" onSubmit={(e) => handleSubmit(e)}>
       <fieldset className="ContactForm__fieldset">
@@ -59,7 +56,6 @@ const ContactForm = () => {
         <button className="ContactForm__button" type="submit">
           Submit
         </button>
-        <div>{formResponse}</div>
       </fieldset>
     </form>
   );

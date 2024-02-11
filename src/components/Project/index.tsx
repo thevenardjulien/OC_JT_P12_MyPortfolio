@@ -3,7 +3,7 @@ import { localhost } from "../../config";
 import Modal from "../Modal";
 import "./style.scss";
 
-const Project = ({ category, title, description, imageUrl }) => {
+const Project = ({ category, title, description, imageUrl, github, lien }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,6 +30,8 @@ const Project = ({ category, title, description, imageUrl }) => {
           title={title}
           description={description}
           imageUrl={imageUrl}
+          github={github}
+          lien={lien}
         />
       )}
     </div>

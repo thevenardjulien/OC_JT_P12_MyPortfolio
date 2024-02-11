@@ -1,16 +1,20 @@
 @use "../../../assets/scss/colors.scss" as *;
 
-.messageContainer {
+.lastsProjects {
   position: relative;
-  padding: 20px;
-  margin-block: 20px;
-  border: 0.5px solid $hr-background;
+  display: flex;
+  flex-direction: column;
+  &__image {
+    max-width: 100px;
+    margin-top: 20px;
+  }
   &__xmark {
     position: absolute;
     font-size: 1.6rem;
     font-weight: 600;
     top: 10px;
     right: 10px;
+    background-color: $primary-background;
     &:hover {
       cursor: pointer;
       color: $main-color;

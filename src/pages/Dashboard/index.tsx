@@ -2,7 +2,8 @@ import "./style.scss";
 
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
-import MessagesList from "./MessageList/index.js";
+import LastsProjects from "./LastsProjects";
+import MessagesList from "./MessageList";
 
 const Dashboard = () => {
   return (
@@ -16,6 +17,10 @@ const Dashboard = () => {
             <div className="modules">
               <h2>Latest posts</h2>
               <MessagesList />
+            </div>
+            <div className="modules">
+              <h2>Lasts Projects</h2>
+              <LastsProjects />
             </div>
           </div>
         </div>

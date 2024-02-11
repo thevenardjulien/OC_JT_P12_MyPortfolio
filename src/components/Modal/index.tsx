@@ -3,7 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { localhost } from "../../config";
 import "./style.scss";
 
-const Modal = ({ setIsOpen, category, title, description, imageUrl }) => {
+const Modal = ({
+  setIsOpen,
+  category,
+  title,
+  description,
+  imageUrl,
+  github,
+  lien,
+}) => {
   const closeModale = (e: MouseEvent) => {
     e.stopPropagation();
     setIsOpen(false);
@@ -25,6 +33,11 @@ const Modal = ({ setIsOpen, category, title, description, imageUrl }) => {
             <blockquote className="content__infos__description">
               {description}
             </blockquote>
+            <div>
+              <p>Accès :</p>
+              <p>Repository Github: {github}</p>
+              <p>Lien direct : {lien}</p>
+            </div>
           </div>
         </div>
       </div>

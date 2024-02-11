@@ -14,7 +14,7 @@ const Dashboard = () => {
           <br />
           <div className="modulesWrapper">
             <div className="modules">
-              <h2>Lasts messages</h2>
+              <h2>Latest posts</h2>
               <MessagesList />
             </div>
           </div>

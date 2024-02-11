@@ -12,7 +12,7 @@ const Login = () => {
     const password = e.currentTarget.password.value;
     const loginResponse = await login(email, password);
     localStorage.setItem("token", loginResponse.token);
-    navigate("/");
+    navigate("/dashboard");
   };
   return (
     <>

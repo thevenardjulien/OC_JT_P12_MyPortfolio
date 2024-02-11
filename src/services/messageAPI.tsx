@@ -35,3 +35,21 @@ export const messagePost = async (
     console.error("Echec lors de l'envoi du message, réessayez plus tard...");
   }
 };
+
+export const messageDelete = async (id: string, token: string) => {
+  const response = await fetch(
+    `http://localhost:3000/api/message/delete/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  if (response.ok) {
+    console.log("Message supprimé !");
+  } else {
+    console.error("Impossible de supprimer le message, réessayez plus tard...");
+  }
+};

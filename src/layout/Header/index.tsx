@@ -1,7 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./style.scss";
 
 const Header = () => {
+  const token = localStorage.getItem("token") || null;
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
     <>
       <div className="header">
@@ -9,9 +15,14 @@ const Header = () => {
           <NavLink to="/">01. Home</NavLink>
           <NavLink to="/projects">02. Projects</NavLink>
           <NavLink to="/contact">03. Contact</NavLink>
-          <NavLink to="/signup">04. Signup</NavLink>
-          <NavLink to="/login">05. Login</NavLink>
-          <NavLink to="/dashboard">06. Dashboard</NavLink>
+          {token !== null ? (
+            <>
+              <NavLink to="/dashboard">0X. Dashboard</NavLink>
+              <NavLink to="/" onClick={handleLogOut}>
+                0X. Logout
+              </NavLink>
+            </>
+          ) : null}
         </nav>
       </div>
     </>

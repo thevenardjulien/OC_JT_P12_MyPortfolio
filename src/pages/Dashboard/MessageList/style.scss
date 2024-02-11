@@ -1,7 +1,13 @@
 @use "../../../assets/scss/colors.scss" as *;
 
 .messageContainer {
+  position: relative;
   padding: 20px;
   margin-block: 20px;
   border: 0.5px solid $hr-background;
+  &__xmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }

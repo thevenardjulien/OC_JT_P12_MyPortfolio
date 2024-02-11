@@ -1,41 +1,57 @@
-import "./style.scss";
-
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { messageGet } from "../../../services/messageAPI";
+import { messageDelete, messageGet } from "../../../services/messageAPI";
+import "./style.scss";
 
 const MessagesList = () => {
   const [messages, setMessages] = useState([]);
   const token = localStorage.getItem("token");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const messageGetResponse = await messageGet(token);
+  const fetchData = async () => {
+    try {
+      const messageGetResponse = await messageGet(token);
 
-        // Vérifier si la réponse est un objet contenant un tableau de messages
-        if (messageGetResponse && Array.isArray(messageGetResponse.messages)) {
-          setMessages(messageGetResponse.messages);
-        } else {
-          console.error(
-            "La réponse ne contient pas un tableau de messages valide :",
-            messageGetResponse
-          );
-          setMessages([]); // Réinitialiser les messages en cas de structure incorrecte
-        }
-      } catch (error) {
-        console.error("Erreur lors de la récupération des messages :", error);
-        setMessages([]); // Réinitialiser les messages en cas d'erreur
+      if (messageGetResponse && Array.isArray(messageGetResponse.messages)) {
+        setMessages(messageGetResponse.messages);
+      } else {
+        console.error(
+          "La réponse ne contient pas un tableau de messages valide :",
+          messageGetResponse
+        );
+        setMessages([]);
       }
-    };
+    } catch (error) {
+      console.error("Erreur lors de la récupération des messages :", error);
+      setMessages([]);
+    }
+  };
 
+  const handleDelete = async (messageId) => {
+    try {
+      await messageDelete(messageId, token);
+      // Actualiser les messages après la suppression réussie
+      fetchData();
+    } catch (error) {
+      console.error("Erreur lors de la suppression du message :", error);
+    }
+  };
+
+  useEffect(() => {
     fetchData();
   }, [token]);
 
   return (
     <div>
       {messages && messages.length > 0
-        ? messages.map((message) => (
+        ? messages.toReversed().map((message) => (
             <div className="messageContainer" key={message._id}>
+              <span
+                className="messageContainer__xmark"
+                onClick={() => handleDelete(message._id)}
+              >
+                <FontAwesomeIcon icon={faXmark} />
+              </span>
               <p>
                 <strong>Nom:</strong> {message.name}
               </p>

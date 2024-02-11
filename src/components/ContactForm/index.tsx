@@ -1,15 +1,18 @@
+import { useRef } from "react";
 import { messagePost } from "../../services/messageAPI";
 import "./style.scss";
 
 const ContactForm = () => {
+  const form = useRef();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { userName, email, message } = e.currentTarget;
     console.log(userName.value, email.value, message.value);
     messagePost(userName.value, email.value, message.value);
+    form.current.reset();
   };
   return (
-    <form className="ContactForm" onSubmit={(e) => handleSubmit(e)}>
+    <form ref={form} className="ContactForm" onSubmit={(e) => handleSubmit(e)}>
       <fieldset className="ContactForm__fieldset">
         <legend className="ContactForm__legend">Contact Form</legend>
         <div className="UserWrapper">

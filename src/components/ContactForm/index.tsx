@@ -1,15 +1,12 @@
+import { messagePost } from "../../services/messageAPI";
 import "./style.scss";
 
 const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { userName, email, message } = e.currentTarget;
-    const formData = {
-      userName: userName.value,
-      email: email.value,
-      message: message.value,
-    };
-    console.log(formData);
+    console.log(userName.value, email.value, message.value);
+    messagePost(userName.value, email.value, message.value);
   };
   return (
     <form className="ContactForm" onSubmit={(e) => handleSubmit(e)}>

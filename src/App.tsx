@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
-import { PostsList } from "./assets/datas/PostsList";
+import { SelectedProjects } from "./assets/datas/SelectedProjects";
 import Hero from "./components/Hero";
 import Loader from "./components/Loader";
 import ProjectList from "./components/ProjectList";
@@ -11,7 +11,7 @@ import Sidebar from "./layout/Sidebar";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const posts = PostsList;
+  const [posts, setPosts] = useState(SelectedProjects);
 
   return (
     <>

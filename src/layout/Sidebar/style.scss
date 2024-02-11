@@ -1,5 +1,12 @@
 @use "../../assets/scss/colors.scss" as *;
 
+.Sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .Wrapper {
   background-color: $tiertary-background;
   padding: 20px;
@@ -21,4 +28,10 @@ hr {
 
 li {
   padding: 4px;
+}
+
+@media screen and (min-width: 1024px) {
+  .Sidebar {
+    flex-direction: column;
+  }
 }

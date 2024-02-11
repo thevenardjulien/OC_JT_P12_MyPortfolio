@@ -1,0 +1,23 @@
+@use "../../assets/scss/colors.scss" as *;
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    padding-right: 10px;
+    margin-bottom: 5px;
+  }
+  &__input {
+    margin-bottom: 15px;
+  }
+  &__button {
+    width: 100%;
+    margin: 5px 0 0 0;
+    font-weight: 600;
+  }
+  &__signup {
+    padding-block: 10px;
+    text-align: center;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,18 @@
+@use "../../assets/scss/colors.scss" as *;
+
+.Dashboard {
+  margin: 0 auto;
+  &__title {
+    text-align: center;
+  }
+}
+
+.modulesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modules {
+  padding: 20px;
+  background-color: $tiertary-background;
+}

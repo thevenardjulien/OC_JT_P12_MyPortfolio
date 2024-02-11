@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PostsList } from "../../assets/datas/PostsList";
+import { AllProjects } from "../../assets/datas/AllProjects";
 import Loader from "../../components/Loader";
 import ProjectList from "../../components/ProjectList";
 import SectionTitle from "../../components/SectionTitle";
@@ -9,7 +9,7 @@ import "./style.scss";
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const posts = PostsList;
+  const [posts, setPosts] = useState(AllProjects);
 
   return (
     <>

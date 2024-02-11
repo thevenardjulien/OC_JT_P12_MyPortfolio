@@ -1,4 +1,4 @@
-export const PostsList = [
+export const SelectedProjects = [
   {
     Category: "Web development",
     Title: "Project 1",

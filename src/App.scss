@@ -17,6 +17,7 @@ main {
   flex: 1;
   background-color: $secondary-background;
   margin-top: 60px;
+  padding-block: 60px;
 }
 
 .mainWrapper {
@@ -25,12 +26,12 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+  &__aside {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  main {
-    padding: 60px;
-  }
   .mainWrapper {
     display: flex;
     flex-wrap: nowrap;

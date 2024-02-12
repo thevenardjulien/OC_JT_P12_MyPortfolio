@@ -8,7 +8,7 @@ const ContactForm = () => {
     e.preventDefault();
     const { userName, email, message } = e.currentTarget;
     console.log(userName.value, email.value, message.value);
-    messagePost(userName.value, email.value, message.value);
+    const response = messagePost(userName.value, email.value, message.value);
     form.current.reset();
   };
   return (

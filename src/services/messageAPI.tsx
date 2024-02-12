@@ -1,3 +1,5 @@
+import { toast } from "sonner";
+
 export const messageGet = async (token: string) => {
   const response = await fetch("http://localhost:3000/api/message", {
     method: "GET",
@@ -13,6 +15,7 @@ export const messageGet = async (token: string) => {
     console.error(
       "Impossible de récupérer les messages, réessayez plus tard..."
     );
+    toast("Unable to retrieve messages, try again later...");
   }
 };
 
@@ -30,9 +33,11 @@ export const messagePost = async (
   });
 
   if (response.ok) {
-    console.log("Message enregistré !");
+    console.log("Message envoyé !");
+    toast("Your message has been sent sucessfully !");
   } else {
     console.error("Echec lors de l'envoi du message, réessayez plus tard...");
+    toast("Your message could not be sent, try again later...");
   }
 };
 
@@ -49,7 +54,9 @@ export const messageDelete = async (id: string, token: string) => {
 
   if (response.ok) {
     console.log("Message supprimé !");
+    toast("Your message has been deleted sucessfully !");
   } else {
     console.error("Impossible de supprimer le message, réessayez plus tard...");
+    toast("Your message could not be deleted, try again later...");
   }
 };

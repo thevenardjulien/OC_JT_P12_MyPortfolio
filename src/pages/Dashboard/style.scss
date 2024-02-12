@@ -13,6 +13,7 @@ main {
 
 .modulesWrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
 }
@@ -21,4 +22,5 @@ main {
   padding: 50px;
   background-color: $tiertary-background;
   max-width: fit-content;
+  flex: 1;
 }

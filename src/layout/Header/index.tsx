@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./style.scss";
 
 const Header = () => {
@@ -18,9 +18,9 @@ const Header = () => {
           {token !== null ? (
             <>
               <NavLink to="/dashboard">0X. Dashboard</NavLink>
-              <NavLink to="/" onClick={handleLogOut}>
+              <Link to="/" onClick={handleLogOut}>
                 0X. Logout
-              </NavLink>
+              </Link>
             </>
           ) : null}
         </nav>

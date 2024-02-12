@@ -12,7 +12,8 @@
     position: absolute;
     font-size: 1.6rem;
     font-weight: 600;
-    top: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 10px;
     background-color: $primary-background;
     &:hover {

@@ -1,4 +1,5 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import "./style.scss";
 
 const Header = () => {
@@ -6,6 +7,7 @@ const Header = () => {
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem("token");
+    toast("Logout Sucessfully !");
     navigate("/");
   };
   return (

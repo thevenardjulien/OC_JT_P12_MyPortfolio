@@ -10,7 +10,7 @@ const ProjectList = ({ postsList, listSize }) => {
         category={post.category}
         title={post.title}
         description={post.description}
-        imageUrl={post.imageUrl}
+        images={post.images}
         github={post.github}
         lien={post.lien}
       />

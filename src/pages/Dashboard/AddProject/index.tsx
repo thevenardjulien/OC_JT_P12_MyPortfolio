@@ -12,11 +12,19 @@ const AddProject = () => {
     const category = form.current.category.value;
     const title = form.current.title.value;
     const description = form.current.description.value;
-    const imageUrl = form.current.imageUrl.value;
+    const imageFile = form.current.image.files[0];
     const github = form.current.github.value;
     const lien = form.current.lien.value;
 
-    addProject(category, title, description, imageUrl, github, lien, token);
+    const formData = new FormData();
+    formData.append("category", category);
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("images", imageFile);
+    formData.append("github", github);
+    formData.append("lien", lien);
+
+    addProject(formData, token);
     form.current.reset();
     navigate("/");
   };
@@ -56,9 +64,10 @@ const AddProject = () => {
       </label>
       <input
         className="addProject__input"
-        type="text"
-        name="imageUrl"
-        id="imageUrl"
+        type="file"
+        name="image"
+        id="image"
+        accept="image/*"
         required
       />
       <label className="addProject__label" htmlFor="github">

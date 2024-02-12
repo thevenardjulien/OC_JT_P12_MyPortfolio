@@ -9,7 +9,7 @@ import typeScriptIcon from "../../assets/images/icons/typescript.png";
 const Tools = () => {
   return (
     <div className="MyStack">
-      <p>ToolsList :</p>
+      <h4>ToolsList :</h4>
       <hr />
       <ul>
         {/* <li>

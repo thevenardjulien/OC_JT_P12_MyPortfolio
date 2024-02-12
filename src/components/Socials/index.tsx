@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Socials = () => {
   return (
     <div className="Socials">
-      <p>Join me on :</p>
+      <h4>Join me on :</h4>
       <hr />
       <ul>
         <li>

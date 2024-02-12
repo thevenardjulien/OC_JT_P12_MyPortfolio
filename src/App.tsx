@@ -23,6 +23,8 @@ function App() {
     getPosts();
   }, []);
 
+  useEffect(() => {}, [posts]);
+
   return (
     <>
       <Header />
@@ -30,7 +32,7 @@ function App() {
       <main>
         <div className="mainWrapper">
           <section className="mainWrapper__content">
-            {!isLoading ? (
+            {!isLoading && posts ? (
               <>
                 <SectionTitle title="SELECTED PROJECTS" />
                 <ProjectList postsList={posts} listSize="3" />

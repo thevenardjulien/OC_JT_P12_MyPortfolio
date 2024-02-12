@@ -1,29 +1,12 @@
 import { toast } from "sonner";
 
-export const addProject = async (
-  category: string,
-  title: string,
-  description: string,
-  imageUrl: string,
-  github: string,
-  lien: string,
-  token: string
-) => {
+export const addProject = async (formData, token) => {
   const response = await fetch("http://localhost:3000/api/project/add", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
-      "Content-type": "application/json",
     },
-    body: JSON.stringify({
-      category,
-      title,
-      description,
-      imageUrl,
-      github,
-      lien,
-      token,
-    }),
+    body: formData,
   });
 
   if (response.ok) {

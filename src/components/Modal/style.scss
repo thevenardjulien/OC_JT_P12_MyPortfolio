@@ -16,7 +16,7 @@
 .Modale {
   position: relative;
   width: 90%;
-  height: 90%;
+  height: 85%;
   background-color: $secondary-background;
   display: flex;
   justify-content: center;
@@ -40,7 +40,8 @@
   display: flex;
   gap: 50px;
   &__img {
-    max-width: 50%;
+    min-width: 50%;
+    box-shadow: 0px 0px 1px 1px $second-color;
   }
   &__infos {
     display: flex;
@@ -54,5 +55,20 @@
       padding: 50px;
       background: rgba($color: $second-color, $alpha: 0.1);
     }
+  }
+}
+
+.Access {
+  display: flex;
+  justify-content: end;
+  font-size: 1.1rem;
+  gap: 50px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  &__link {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    text-underline-offset: 5px;
   }
 }

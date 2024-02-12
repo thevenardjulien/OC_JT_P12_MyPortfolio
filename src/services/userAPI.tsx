@@ -28,13 +28,13 @@ export const login = async (email: string, password: string) => {
   });
 
   if (response.ok) {
-    toast("");
-    console.log("Successful connection !");
+    toast("Connected successfully !");
+    console.log("Connected successfully !");
     const loginResponse = await response.json();
     console.log(loginResponse);
     return loginResponse;
   } else {
-    toast("");
+    toast("Failed to connect, try again later...");
     console.error("Failed to connect, try again later...");
   }
 };

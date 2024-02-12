@@ -1,13 +1,17 @@
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { localhost } from "../../../config";
 import { deleteProject, getAllProjects } from "../../../services/projectAPI";
 import "./style.scss";
 
-const lastsProjects = () => {
+const LastsProjects = () => {
   const [posts, setPosts] = useState([]);
   const token = localStorage.getItem("token");
+
+  const createBlobUrl = (data, contentType) => {
+    const blob = new Blob([new Uint8Array(data.data)], { type: contentType });
+    return URL.createObjectURL(blob);
+  };
 
   const getPosts = async () => {
     const projects = await getAllProjects();
@@ -32,11 +36,16 @@ const lastsProjects = () => {
       <ul>
         {posts.toReversed().map((post, index) => (
           <li className="lastsProjects" key={index}>
-            <img
-              className="lastsProjects__image"
-              src={`${localhost}/${post.imageUrl}`}
-              alt={post.title}
-            />
+            {post.images && post.images.length > 0 && (
+              <img
+                className="lastsProjects__image"
+                src={createBlobUrl(
+                  post.images[0].data,
+                  post.images[0].contentType
+                )}
+                alt={post.title}
+              />
+            )}
             {post.title}
             <span
               className="lastsProjects__xmark"
@@ -51,4 +60,4 @@ const lastsProjects = () => {
   );
 };
 
-export default lastsProjects;
+export default LastsProjects;

@@ -1,0 +1,42 @@
+@use "../../assets/scss/colors.scss" as *;
+
+.MenuMobileOverlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: $secondary-background, $alpha: 0.4);
+}
+
+.MenuMobile {
+  position: fixed;
+  top: 0%;
+  right: 0px;
+  transform: translateY(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 1);
+  &__xmark {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.4rem;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-block: 50px;
+    margin-top: 50px;
+  }
+}
+
+.socials {
+  font-size: 1.4rem;
+  display: flex;
+  gap: 10px;
+}

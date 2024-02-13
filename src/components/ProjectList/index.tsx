@@ -2,8 +2,9 @@ import Project from "../Project";
 
 const ProjectList = ({ postsList, listSize }) => {
   return postsList
-    .toReversed()
+    .slice()
     .slice(0, listSize)
+    .reverse()
     .map((post, index: number) => (
       <div key={index}>
         <Project

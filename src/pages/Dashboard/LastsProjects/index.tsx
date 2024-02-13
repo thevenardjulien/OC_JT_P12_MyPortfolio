@@ -34,27 +34,30 @@ const LastsProjects = () => {
   return (
     <>
       <ul>
-        {posts.toReversed().map((post, index) => (
-          <li className="lastsProjects" key={index}>
-            {post.images && post.images.length > 0 && (
-              <img
-                className="lastsProjects__image"
-                src={createBlobUrl(
-                  post.images[0].data,
-                  post.images[0].contentType
-                )}
-                alt={post.title}
-              />
-            )}
-            {post.title}
-            <span
-              className="lastsProjects__xmark"
-              onClick={() => handleDelete(post._id)}
-            >
-              <FontAwesomeIcon icon={faXmark} />
-            </span>
-          </li>
-        ))}
+        {posts
+          .slice()
+          .reverse()
+          .map((post, index) => (
+            <li className="lastsProjects" key={index}>
+              {post.images && post.images.length > 0 && (
+                <img
+                  className="lastsProjects__image"
+                  src={createBlobUrl(
+                    post.images[0].data,
+                    post.images[0].contentType
+                  )}
+                  alt={post.title}
+                />
+              )}
+              {post.title}
+              <span
+                className="lastsProjects__xmark"
+                onClick={() => handleDelete(post._id)}
+              >
+                <FontAwesomeIcon icon={faXmark} />
+              </span>
+            </li>
+          ))}
       </ul>
     </>
   );

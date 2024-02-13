@@ -28,7 +28,7 @@ const Project = ({ category, title, description, images, github, lien }) => {
           <h3 className="Infos__title">{title}</h3>
           <p className="Infos__description">{description}</p>
           <br />
-          <p>
+          <p className="Infos__links">
             <Link className="Infos__link" to={github}>
               <FontAwesomeIcon icon={faGithub} /> View on Github
             </Link>

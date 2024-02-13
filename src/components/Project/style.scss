@@ -1,13 +1,14 @@
 @use "../../assets/scss/colors.scss" as *;
+
 .Project {
-  display: flex;
-  flex-direction: column;
   &__content {
     display: flex;
     flex-wrap: wrap;
-    padding: 40px;
+    padding-block: 40px;
+    padding-inline: 20px;
     gap: 30px;
     text-align: justify;
+
     &:hover {
       background-color: rgba($color: $hr-background, $alpha: 0.025);
       cursor: pointer;
@@ -21,47 +22,53 @@
       text-underline-offset: 2px;
     }
   }
-  &__imgWrapper {
-    overflow: hidden;
-    max-width: 50%;
-  }
+
   &__img {
-    aspect-ratio: 16 / 9;
     width: 100%;
     object-fit: cover;
     transition: transform 400ms linear;
   }
+
   &__hr {
     border: none;
     height: 0.5px;
     background-color: $hr-background;
   }
-}
 
-.Infos {
-  &__category {
-    width: fit-content;
-    padding: 5px 10px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    background-color: $main-color;
-  }
-  &__title {
-    font-size: 1.5rem;
-    padding-block: 20px;
-  }
-  &__description {
-    color: $second-color;
-  }
-}
+  .Infos {
+    min-width: 50%;
+    &__category {
+      width: fit-content;
+      padding: 5px 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      background-color: $main-color;
+    }
 
-@media screen and (min-width: 1024px) {
-  .Project {
-    display: flex;
+    &__title {
+      font-size: 1.5rem;
+      padding-block: 20px;
+    }
+
+    &__description {
+      min-width: 50%;
+      color: $second-color;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
     &__content {
       flex-wrap: nowrap;
+      padding-block: 80px;
+      padding-inline: 40px;
     }
+
     &__imgWrapper {
       min-width: 50%;
     }

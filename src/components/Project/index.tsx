@@ -1,10 +1,6 @@
-import { useState } from "react";
-import Modal from "../Modal";
 import "./style.scss";
 
 const Project = ({ category, title, description, images, github, lien }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const createBlobUrl = (data, contentType) => {
     const blob = new Blob([new Uint8Array(data.data)], { type: contentType });
     return URL.createObjectURL(blob);
@@ -13,7 +9,7 @@ const Project = ({ category, title, description, images, github, lien }) => {
   return (
     <div className="Project">
       <hr className="Project__hr" />
-      <div className="Project__content" onClick={() => setIsOpen(true)}>
+      <div className="Project__content">
         <div className="Project__imgWrapper">
           {images && images.length > 0 && (
             <img
@@ -29,17 +25,6 @@ const Project = ({ category, title, description, images, github, lien }) => {
           <p className="Infos__description">{description}</p>
         </div>
       </div>
-      {isOpen && (
-        <Modal
-          setIsOpen={setIsOpen}
-          category={category}
-          title={title}
-          description={description}
-          images={images}
-          github={github}
-          lien={lien}
-        />
-      )}
     </div>
   );
 };

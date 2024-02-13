@@ -5,15 +5,16 @@ const ProjectList = ({ postsList, listSize }) => {
     .toReversed()
     .slice(0, listSize)
     .map((post, index: number) => (
-      <Project
-        key={index}
-        category={post.category}
-        title={post.title}
-        description={post.description}
-        images={post.images}
-        github={post.github}
-        lien={post.lien}
-      />
+      <div key={index}>
+        <Project
+          category={post.category}
+          title={post.title}
+          description={post.description}
+          images={post.images}
+          github={post.github}
+          lien={post.lien}
+        />
+      </div>
     ));
 };
 

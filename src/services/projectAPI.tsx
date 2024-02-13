@@ -11,12 +11,10 @@ export const addProject = async (formData, token) => {
 
   if (response.ok) {
     toast("Project added successfully!");
-    console.log("Projet ajouté avec succès !");
     const addedProject = await response.json();
-    console.log(addedProject);
     return addedProject;
   } else {
-    console.error("Failed while adding project, try again later...");
+    toast("Failed while adding project, try again later...");
   }
 };
 
@@ -27,13 +25,9 @@ export const getAllProjects = async () => {
 
   if (response.ok) {
     const projects = await response.json();
-    console.log("Liste des projets récupérée avec succès:", projects);
     return projects;
   } else {
     toast("Failed to retrieve projects, try again later...");
-    console.error(
-      "Échec lors de la récupération des projets, réessayez plus tard..."
-    );
   }
 };
 
@@ -50,11 +44,7 @@ export const deleteProject = async (projectId, token) => {
 
   if (response.ok) {
     toast("Project successfully deleted!");
-    console.log("Projet supprimé avec succès !");
   } else {
     toast("Failed to delete project, try again later...");
-    console.error(
-      "Échec lors de la suppression du projet, réessayez plus tard..."
-    );
   }
 };

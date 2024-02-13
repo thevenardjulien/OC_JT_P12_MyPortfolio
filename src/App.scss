@@ -22,25 +22,12 @@ main {
 
 .mainWrapper {
   margin: 0 auto;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  &__aside {
-    margin: 0 auto;
-  }
 }
 
 @media screen and (min-width: 1024px) {
   .mainWrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 50px;
-    &__content {
-      min-width: 80%;
-    }
-    &__aside {
-      min-width: 20%;
-    }
+    max-width: 80%;
   }
 }

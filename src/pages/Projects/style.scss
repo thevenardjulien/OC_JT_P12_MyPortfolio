@@ -3,6 +3,8 @@ main {
   justify-content: center;
 }
 
-.contentWrapper {
-  width: 80%;
+@media screen and (min-width: 1024px) {
+  .contentWrapper {
+    width: 80%;
+  }
 }

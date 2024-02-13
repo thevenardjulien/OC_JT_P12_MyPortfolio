@@ -7,8 +7,15 @@
   padding: 20px 20px;
   display: flex;
   justify-content: end;
+  align-items: center;
   background-color: $primary-background;
   &__links {
+    display: flex;
+    gap: 10px;
+  }
+  &__socials {
+    margin-left: 10px;
+    font-size: 1.2rem;
     display: flex;
     gap: 10px;
   }

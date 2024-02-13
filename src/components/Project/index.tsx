@@ -1,4 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.scss";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 const Project = ({ category, title, description, images, github, lien }) => {
   const createBlobUrl = (data, contentType) => {
@@ -24,8 +28,12 @@ const Project = ({ category, title, description, images, github, lien }) => {
           <h3 className="Infos__title">{title}</h3>
           <p className="Infos__description">{description}</p>
           <p>
-            {github}
-            {lien}
+            <Link className="Infos__link" to={github}>
+              <FontAwesomeIcon icon={faGithub} />
+            </Link>
+            <Link className="Infos__link" to={lien}>
+              <FontAwesomeIcon icon={faLink} />
+            </Link>
           </p>
         </div>
       </div>

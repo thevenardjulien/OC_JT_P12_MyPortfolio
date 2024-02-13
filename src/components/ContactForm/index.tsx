@@ -3,11 +3,11 @@ import { messagePost } from "../../services/messageAPI";
 import "./style.scss";
 
 const ContactForm = () => {
-  const form = useRef();
+  const form = useRef(null);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { userName, email, message } = e.currentTarget;
-    const response = messagePost(userName.value, email.value, message.value);
+    messagePost(userName.value, email.value, message.value);
     form.current.reset();
   };
   return (

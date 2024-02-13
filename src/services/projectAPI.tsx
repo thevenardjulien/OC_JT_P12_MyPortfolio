@@ -1,7 +1,8 @@
 import { toast } from "sonner";
+import { localhost } from "../config";
 
 export const addProject = async (formData, token) => {
-  const response = await fetch("http://localhost:3000/api/project/add", {
+  const response = await fetch(`${localhost}api/project/add`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -19,7 +20,7 @@ export const addProject = async (formData, token) => {
 };
 
 export const getAllProjects = async () => {
-  const response = await fetch("http://localhost:3000/api/project/", {
+  const response = await fetch(`${localhost}api/project/`, {
     method: "GET",
   });
 
@@ -32,15 +33,12 @@ export const getAllProjects = async () => {
 };
 
 export const deleteProject = async (projectId, token) => {
-  const response = await fetch(
-    `http://localhost:3000/api/project/delete/${projectId}`,
-    {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await fetch(`${localhost}api/project/delete/${projectId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   if (response.ok) {
     toast("Project successfully deleted!");

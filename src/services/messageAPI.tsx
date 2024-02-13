@@ -1,7 +1,8 @@
 import { toast } from "sonner";
+import { localhost } from "../config";
 
 export const messageGet = async (token: string) => {
-  const response = await fetch("http://localhost:3000/api/message", {
+  const response = await fetch(`${localhost}api/message`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -21,7 +22,7 @@ export const messagePost = async (
   email: string,
   message: string
 ) => {
-  const response = await fetch("http://localhost:3000/api/message/post", {
+  const response = await fetch(`${localhost}api/message/post`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -37,15 +38,12 @@ export const messagePost = async (
 };
 
 export const messageDelete = async (id: string, token: string) => {
-  const response = await fetch(
-    `http://localhost:3000/api/message/delete/${id}`,
-    {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await fetch(`${localhost}api/message/delete/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   if (response.ok) {
     toast("Your message has been deleted sucessfully !");

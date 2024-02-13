@@ -4,7 +4,7 @@ import { addProject } from "../../../services/projectAPI";
 import "./style.scss";
 
 const AddProject = () => {
-  const form = useRef();
+  const form = useRef(null);
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const handleSubmit = (e) => {

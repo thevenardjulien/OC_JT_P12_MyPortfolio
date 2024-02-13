@@ -1,7 +1,8 @@
 import { toast } from "sonner";
+import { localhost } from "../config";
 
 export const signup = async (email: string, password: string) => {
-  const response = await fetch("http://localhost:3000/api/auth/signup", {
+  const response = await fetch(`${localhost}api/auth/signup`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -17,7 +18,7 @@ export const signup = async (email: string, password: string) => {
 };
 
 export const login = async (email: string, password: string) => {
-  const response = await fetch("http://localhost:3000/api/auth/login", {
+  const response = await fetch(`${localhost}api/auth/login`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",

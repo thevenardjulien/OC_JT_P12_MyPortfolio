@@ -23,6 +23,10 @@ const Project = ({ category, title, description, images, github, lien }) => {
           <p className="Infos__category">{category}</p>
           <h3 className="Infos__title">{title}</h3>
           <p className="Infos__description">{description}</p>
+          <p>
+            {github}
+            {lien}
+          </p>
         </div>
       </div>
     </div>

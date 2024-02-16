@@ -28,12 +28,6 @@
     transition: transform 400ms linear;
   }
 
-  &__hr {
-    border: none;
-    height: 0.5px;
-    background-color: $hr-background;
-  }
-
   .Infos {
     min-width: 50%;
     &__category {

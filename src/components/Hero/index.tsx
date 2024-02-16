@@ -11,7 +11,7 @@ const Hero = () => {
           <h2>Passionate about design</h2>
           <h2>& web development</h2>
           <br />
-          <p>Feel free to explore, have fun !</p>
+          <p>I like to create things. Have fun !</p>
         </div>
       </div>
     </div>

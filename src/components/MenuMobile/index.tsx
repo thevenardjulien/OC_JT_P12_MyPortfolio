@@ -6,7 +6,11 @@ import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from "react";
 
-const MenuMobile = ({ activeMenuMobile }) => {
+interface MenuMobileProps {
+  activeMenuMobile: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const MenuMobile: React.FC<MenuMobileProps> = ({ activeMenuMobile }) => {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const handleLogOut = () => {
@@ -18,7 +22,7 @@ const MenuMobile = ({ activeMenuMobile }) => {
     window.addEventListener("click", () => {
       activeMenuMobile(false);
     });
-  }, []);
+  }, [activeMenuMobile]);
   return (
     <div className="MenuMobile">
       <div className="MenuMobile">

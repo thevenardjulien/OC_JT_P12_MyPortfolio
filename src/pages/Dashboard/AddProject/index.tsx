@@ -7,25 +7,22 @@ const AddProject = () => {
   const form = useRef(null);
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const category = form.current.category.value;
-    const title = form.current.title.value;
-    const description = form.current.description.value;
-    const imageFile = form.current.image.files[0];
-    const github = form.current.github.value;
-    const lien = form.current.lien.value;
+
+    const { category, title, description, image, github, lien } = form.current;
 
     const formData = new FormData();
-    formData.append("category", category);
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("images", imageFile);
-    formData.append("github", github);
-    formData.append("lien", lien);
+    formData.append("category", category.value);
+    formData.append("title", title.value);
+    formData.append("description", description.value);
+    formData.append("images", image.files[0]);
+    formData.append("github", github.value);
+    formData.append("lien", lien.value);
 
     addProject(formData, token);
-    form.current.reset();
+    form.current?.reset();
     navigate("/");
   };
   return (

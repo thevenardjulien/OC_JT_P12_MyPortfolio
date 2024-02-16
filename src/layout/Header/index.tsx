@@ -11,7 +11,7 @@ const Header = () => {
   const token = localStorage.getItem("token") || null;
   const navigate = useNavigate();
   const [activeMenuMobile, setActiveMenuMobile] = useState(false);
-  const handleMenu = (e) => {
+  const handleMenu = (e: React.MouseEvent<SVGSVGElement>) => {
     e.stopPropagation();
     setActiveMenuMobile(!activeMenuMobile);
   };
@@ -24,14 +24,14 @@ const Header = () => {
     <>
       <div className="header">
         <nav className="desktop header__links">
-          <NavLink to="/">01. Home</NavLink>
-          <NavLink to="/projects">02. Projects</NavLink>
-          <NavLink to="/contact">03. Contact</NavLink>
+          <NavLink to="/">1. Home</NavLink>
+          <NavLink to="/projects">2. Projects</NavLink>
+          <NavLink to="/contact">3. Contact</NavLink>
           {token !== null ? (
             <>
-              <NavLink to="/dashboard">0X. Dashboard</NavLink>
+              <NavLink to="/dashboard">X. Dashboard</NavLink>
               <Link to="/" onClick={handleLogOut}>
-                0X. Logout
+                X. Logout
               </Link>
             </>
           ) : null}

@@ -42,3 +42,9 @@ select {
 button:hover {
   cursor: pointer;
 }
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: $hr-background;
+}

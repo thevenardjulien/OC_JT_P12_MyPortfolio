@@ -4,9 +4,35 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
-const Project = ({ category, title, description, images, github, lien }) => {
-  const createBlobUrl = (data, contentType) => {
-    const blob = new Blob([new Uint8Array(data.data)], { type: contentType });
+interface Image {
+  contentType: string;
+  data: {
+    data: number[];
+    type: string;
+    _id: string;
+  };
+}
+
+interface Project {
+  category: string;
+  title: string;
+  description: string;
+  images: Image[];
+  github: string;
+  lien: string;
+}
+
+const Project: React.FC<Project> = ({
+  category,
+  title,
+  description,
+  images,
+  github,
+  lien,
+}) => {
+  const createBlobUrl = (data: Image, contentType: string) => {
+    const uint8Array = new Uint8Array(data.data);
+    const blob = new Blob([uint8Array], { type: contentType });
     return URL.createObjectURL(blob);
   };
 

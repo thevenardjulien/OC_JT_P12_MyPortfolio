@@ -8,7 +8,7 @@ const ContactForm = () => {
     e.preventDefault();
     const { userName, email, message } = e.currentTarget;
     messagePost(userName.value, email.value, message.value);
-    form.current.reset();
+    form.current?.reset();
   };
   return (
     <form ref={form} className="ContactForm" onSubmit={(e) => handleSubmit(e)}>

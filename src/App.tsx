@@ -7,23 +7,31 @@ import SectionTitle from "./components/SectionTitle";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { getAllProjects } from "./services/projectAPI";
+import { toast } from "sonner";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState([]);
 
   const getPosts = async () => {
-    const projects = await getAllProjects();
-    setPosts(projects);
-    setIsLoading(false);
+    try {
+      const projects = await getAllProjects();
+      setPosts(projects);
+    } catch (error) {
+      toast.error("Unable to retrieve project list, try again later...");
+      console.error(
+        "Unable to retrieve project list, try again later...",
+        error
+      );
+    } finally {
+      setIsLoading(false);
+      console.log(posts);
+    }
   };
 
   useEffect(() => {
     getPosts();
-  }, [isLoading]);
-
-  useEffect(() => {}, [posts]);
-
+  }, []);
   return (
     <>
       <Header />

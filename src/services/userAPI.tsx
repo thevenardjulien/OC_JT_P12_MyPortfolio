@@ -11,9 +11,9 @@ export const signup = async (email: string, password: string) => {
   });
 
   if (response.ok) {
-    toast("Successful registration !");
+    toast.success("Successful registration !");
   } else {
-    toast("Failed to register, try again later...");
+    toast.error("Failed to register, try again later...");
   }
 };
 
@@ -27,10 +27,10 @@ export const login = async (email: string, password: string) => {
   });
 
   if (response.ok) {
-    toast("Connected successfully !");
+    toast.success("Connected successfully !");
     const loginResponse = await response.json();
     return loginResponse;
   } else {
-    toast("Failed to connect, try again later...");
+    toast.error("Failed to connect, try again later...");
   }
 };

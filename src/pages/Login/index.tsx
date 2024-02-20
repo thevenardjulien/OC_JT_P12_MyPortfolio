@@ -35,9 +35,6 @@ const Login = () => {
           <button className="Login__button" type="submit">
             Submit
           </button>
-          <Link className="Login__signup" to="/signup">
-            New ? SignUp.
-          </Link>
         </form>
       </main>
       <Footer />

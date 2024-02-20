@@ -43,30 +43,30 @@ const MessagesList = () => {
 
   return (
     <div>
-      {messages && messages.length > 0
-        ? messages
-            .slice()
-            .reverse()
-            .map((message) => (
-              <div className="messageContainer" key={message._id}>
-                <span
-                  className="messageContainer__xmark"
-                  onClick={() => handleDelete(message._id)}
-                >
-                  <FontAwesomeIcon icon={faXmark} />
-                </span>
-                <p>
-                  <strong>Nom:</strong> {message.name}
-                </p>
-                <p>
-                  <strong>Email:</strong> {message.email}
-                </p>
-                <p>
-                  <strong>Message:</strong> {message.message}
-                </p>
-              </div>
-            ))
-        : "Impossible de récupérer les messages..."}
+      {messages &&
+        messages.length > 0 &&
+        messages
+          .slice()
+          .reverse()
+          .map((message) => (
+            <div className="messageContainer" key={message._id}>
+              <span
+                className="messageContainer__xmark"
+                onClick={() => handleDelete(message._id)}
+              >
+                <FontAwesomeIcon icon={faXmark} />
+              </span>
+              <p>
+                <strong>Nom:</strong> {message.name}
+              </p>
+              <p>
+                <strong>Email:</strong> {message.email}
+              </p>
+              <p>
+                <strong>Message:</strong> {message.message}
+              </p>
+            </div>
+          ))}
     </div>
   );
 };

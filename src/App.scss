@@ -2,24 +2,6 @@
 @use "./assets/scss/colors.scss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-#root {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  min-height: 100vh;
-  background-color: $primary-background;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  color: $primary-font-color;
-}
-
-main {
-  flex: 1;
-  background-color: $secondary-background;
-  margin-top: 60px;
-  padding-block: 60px;
-}
-
 .mainWrapper {
   margin: 0 auto;
   display: flex;

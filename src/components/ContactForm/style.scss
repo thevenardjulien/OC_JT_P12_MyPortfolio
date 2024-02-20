@@ -6,7 +6,7 @@
     background-color: $tiertary-background;
     display: flex;
     flex-direction: column;
-    border: 0;
+    border: 1px solid $hr-background;
   }
   &__legend {
     padding-inline: 10px;

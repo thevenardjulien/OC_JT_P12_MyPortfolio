@@ -9,8 +9,8 @@ interface SectionTitle {
 const SectionTitle = ({ title }: SectionTitle) => {
   return (
     <>
-      <div className="SectionTitle">
-        <FontAwesomeIcon icon={faSquare} className="SectionTitle__Square" />
+      <div className="section-title">
+        <FontAwesomeIcon icon={faSquare} className="section-title__square" />
         <h3>{title}</h3>
       </div>
     </>

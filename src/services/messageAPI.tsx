@@ -13,7 +13,7 @@ export const messageGet = async (token: string) => {
     const messages = await response.json();
     return messages;
   } else {
-    toast("Unable to retrieve messages, try again later...");
+    toast.error("Unable to retrieve messages, try again later...");
   }
 };
 
@@ -31,9 +31,9 @@ export const messagePost = async (
   });
 
   if (response.ok) {
-    toast("Your message has been sent sucessfully !");
+    toast.success("Your message has been sent sucessfully !");
   } else {
-    toast("Your message could not be sent, try again later...");
+    toast.error("Your message could not be sent, try again later...");
   }
 };
 
@@ -46,8 +46,8 @@ export const messageDelete = async (id: string, token: string) => {
   });
 
   if (response.ok) {
-    toast("Your message has been deleted sucessfully !");
+    toast.success("Your message has been deleted sucessfully !");
   } else {
-    toast("Your message could not be deleted, try again later...");
+    toast.error("Your message could not be deleted, try again later...");
   }
 };

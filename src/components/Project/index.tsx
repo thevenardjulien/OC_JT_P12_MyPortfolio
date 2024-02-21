@@ -30,8 +30,8 @@ const Project: React.FC<Project> = ({
   github,
   lien,
 }) => {
-  const createBlobUrl = (data: Image, contentType: string) => {
-    const uint8Array = new Uint8Array(data.data);
+  const createBlobUrl = (data: Image["data"], contentType: string) => {
+    const uint8Array = new Uint8Array(Uint8Array.from(data.data));
     const blob = new Blob([uint8Array], { type: contentType });
     return URL.createObjectURL(blob);
   };
@@ -50,7 +50,7 @@ const Project: React.FC<Project> = ({
           {images && images.length > 0 && (
             <img
               className="Project__img"
-              src={createBlobUrl(images[0].data, images[0].contentType)}
+              src={createBlobUrl(images[0].data.data, images[0].contentType)}
               alt={`${title} img`}
             />
           )}

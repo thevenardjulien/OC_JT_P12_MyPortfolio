@@ -11,6 +11,7 @@ interface Image {
     type: string;
     _id: string;
   };
+  _id: string;
 }
 
 interface Project {
@@ -50,7 +51,14 @@ const Project: React.FC<Project> = ({
           {images && images.length > 0 && (
             <img
               className="Project__img"
-              src={createBlobUrl(images[0].data.data, images[0].contentType)}
+              src={createBlobUrl(
+                {
+                  data: images[0].data.data,
+                  type: images[0].contentType,
+                  _id: images[0]._id,
+                },
+                images[0].contentType
+              )}
               alt={`${title} img`}
             />
           )}

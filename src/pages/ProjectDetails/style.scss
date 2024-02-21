@@ -1,9 +1,38 @@
+@use "../../assets/scss/colors.scss" as *;
+
 .postWrapper {
   display: flex;
   gap: 50px;
+  &__img {
+    object-fit: cover;
+  }
   &__infos {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+  &__category {
+    width: fit-content;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: $main-color;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding-block: 20px;
+  }
+
+  &__description {
+    min-width: 50%;
+    color: $second-color;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

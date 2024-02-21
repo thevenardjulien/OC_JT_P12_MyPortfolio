@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import "./style.scss";
@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { getAllProjects } from "../../services/projectAPI";
 import Loader from "../../components/Loader";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectDetails = () => {
-  // const [isLoading, setIsLoading] = useState(true);
   const [post, setPost] = useState(undefined);
   const params = useParams();
 
@@ -22,17 +24,14 @@ const ProjectDetails = () => {
         "Unable to retrieve project list, try again later...",
         error
       );
-    } finally {
-      console.log(post);
-      // setIsLoading(false);
     }
   };
 
   useEffect(() => {
     getPost();
-  }, []);
+  }, [params.title]);
 
-  const createBlobUrl = (data, contentType) => {
+  const createBlobUrl = (data: { data: number[] }, contentType: string) => {
     const uint8Array = new Uint8Array(data.data);
     const blob = new Blob([uint8Array], { type: contentType });
     return URL.createObjectURL(blob);
@@ -58,11 +57,31 @@ const ProjectDetails = () => {
                 )}
               </div>
               <div className="postWrapper__infos">
-                <div>{post[0].title}</div>
-                <div>{post[0].category}</div>
-                <div>{post[0].description}</div>
-                <div>{post[0].github}</div>
-                <div>{post[0].lien}</div>
+                <div className="postWrapper__category">{post[0].category}</div>
+                <div className="postWrapper__title">{post[0].title}</div>
+                <div className="postWrapper__description">
+                  {post[0].description}
+                </div>
+                {post[0].github && (
+                  <div className="postWrapper__github">
+                    <Link
+                      className="Infos__link"
+                      to={post[0].github}
+                      target="_blank"
+                    >
+                      <FontAwesomeIcon icon={faGithub} /> View on Github
+                    </Link>
+                  </div>
+                )}
+                {post[0].lien && (
+                  <Link
+                    className="Infos__link"
+                    to={post[0].lien}
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faLink} /> Direct Link
+                  </Link>
+                )}
               </div>
             </div>
           </>

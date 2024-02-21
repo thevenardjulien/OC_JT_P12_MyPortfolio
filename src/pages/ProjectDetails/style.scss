@@ -1,0 +1,9 @@
+.postWrapper {
+  display: flex;
+  gap: 50px;
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

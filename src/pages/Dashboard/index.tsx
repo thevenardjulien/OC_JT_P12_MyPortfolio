@@ -13,7 +13,6 @@ const Dashboard = () => {
       <main>
         <div className="Dashboard">
           <h1 className="Dashboard__title">Dashboard</h1>
-          <br />
           <div className="modulesWrapper">
             <div className="modules">
               <h2>Latest Contacts</h2>

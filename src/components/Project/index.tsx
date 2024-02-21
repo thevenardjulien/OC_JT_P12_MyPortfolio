@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.scss";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 interface Image {
@@ -36,8 +36,14 @@ const Project: React.FC<Project> = ({
     return URL.createObjectURL(blob);
   };
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`../project-details/${title}`);
+  };
+
   return (
-    <div className="Project">
+    <div className="Project" onClick={handleClick}>
       <hr className="Project__hr" />
       <div className="Project__content">
         <div className="Project__imgWrapper">
@@ -55,12 +61,16 @@ const Project: React.FC<Project> = ({
           <p className="Infos__description">{description}</p>
           <br />
           <p className="Infos__links">
-            <Link className="Infos__link" to={github}>
-              <FontAwesomeIcon icon={faGithub} /> View on Github
-            </Link>
-            <Link className="Infos__link" to={lien}>
-              <FontAwesomeIcon icon={faLink} /> Direct Link
-            </Link>
+            {github && (
+              <Link className="Infos__link" to={github} target="_blank">
+                <FontAwesomeIcon icon={faGithub} /> View on Github
+              </Link>
+            )}
+            {lien && (
+              <Link className="Infos__link" to={lien} target="_blank">
+                <FontAwesomeIcon icon={faLink} /> Direct Link
+              </Link>
+            )}
           </p>
         </div>
       </div>

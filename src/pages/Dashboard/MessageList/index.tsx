@@ -6,7 +6,7 @@ import "./style.scss";
 
 const MessagesList = () => {
   const [messages, setMessages] = useState([]);
-  const token = localStorage.getItem("token");
+  const token: string = localStorage.getItem("token");
 
   const fetchData = async () => {
     try {
@@ -27,10 +27,9 @@ const MessagesList = () => {
     }
   };
 
-  const handleDelete = async (messageId) => {
+  const handleDelete = async (messageId: string) => {
     try {
       await messageDelete(messageId, token);
-      // Actualiser les messages après la suppression réussie
       fetchData();
     } catch (error) {
       console.error("Erreur lors de la suppression du message :", error);

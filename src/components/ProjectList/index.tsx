@@ -1,4 +1,5 @@
 import Project from "../Project";
+import "./style.scss";
 
 const ProjectList = ({ postsList, listSize }) => {
   return postsList
@@ -6,7 +7,7 @@ const ProjectList = ({ postsList, listSize }) => {
     .reverse()
     .slice(0, listSize)
     .map((post, index: number) => (
-      <div key={index}>
+      <div key={index} className={`Project Project${index}`}>
         <Project
           category={post.category}
           title={post.title}

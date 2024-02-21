@@ -40,7 +40,7 @@ function App() {
         <div className="mainWrapper">
           {!isLoading && posts ? (
             <>
-              <SectionTitle title="Selected Projects" />
+              <SectionTitle title="SELECTED PROJECTS" />
               <ProjectList postsList={posts} listSize="3" />
             </>
           ) : (

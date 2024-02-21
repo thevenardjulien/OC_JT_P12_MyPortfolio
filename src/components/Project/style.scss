@@ -25,10 +25,14 @@
   &__img {
     width: 100%;
     object-fit: cover;
+    aspect-ratio: 16 / 9;
     transition: transform 400ms linear;
   }
 
   .Infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 50%;
     &__category {
       width: fit-content;

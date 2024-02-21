@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import { login } from "../../services/userAPI";

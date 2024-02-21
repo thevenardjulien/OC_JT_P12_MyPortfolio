@@ -38,12 +38,12 @@ const Project: React.FC<Project> = ({
 
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     navigate(`../project-details/${title}`);
   };
 
   return (
-    <div className="Project" onClick={(e) => handleClick(e)}>
+    <div className="Project" onClick={handleClick}>
       <hr className="Project__hr" />
       <div className="Project__content">
         <div className="Project__imgWrapper">

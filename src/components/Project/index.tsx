@@ -68,7 +68,7 @@ const Project: React.FC<Project> = ({
           <h3 className="Infos__title">{title}</h3>
           <p className="Infos__description">{description}</p>
           <br />
-          <p className="Infos__links">
+          {/* <p className="Infos__links">
             {github && (
               <Link className="Infos__link" to={github} target="_blank">
                 <FontAwesomeIcon icon={faGithub} /> View on Github
@@ -79,7 +79,7 @@ const Project: React.FC<Project> = ({
                 <FontAwesomeIcon icon={faLink} /> Direct Link
               </Link>
             )}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

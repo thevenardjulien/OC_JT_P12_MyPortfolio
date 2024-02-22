@@ -1,8 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.scss";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 interface Image {
   contentType: string;
@@ -28,8 +25,8 @@ const Project: React.FC<Project> = ({
   title,
   description,
   images,
-  github,
-  lien,
+  // github,
+  // lien,
 }) => {
   const createBlobUrl = (data: Image["data"], contentType: string) => {
     const uint8Array = new Uint8Array(Uint8Array.from(data.data));

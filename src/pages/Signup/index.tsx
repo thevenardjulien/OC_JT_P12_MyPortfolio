@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import { signup } from "../../services/userAPI";

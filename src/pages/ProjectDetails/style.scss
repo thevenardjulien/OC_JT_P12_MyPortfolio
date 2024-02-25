@@ -79,6 +79,7 @@
 
 @media screen and (min-width: 1024px) {
   .postWrapper {
+    max-width: 80%;
     &__img {
       max-height: 300px;
       margin-bottom: 40px;

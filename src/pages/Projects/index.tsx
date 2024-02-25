@@ -3,7 +3,6 @@ import Header from "../../layout/Header";
 import Footer from "../../layout/Footer";
 import Loader from "../../components/Loader";
 import { toast } from "sonner";
-import SectionTitle from "../../components/SectionTitle";
 import ProjectList from "../../components/ProjectList";
 import { getAllProjects } from "../../services/projectAPI";
 import "./style.scss";

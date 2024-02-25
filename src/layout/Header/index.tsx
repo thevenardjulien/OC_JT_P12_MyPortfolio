@@ -2,7 +2,6 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import MenuMobile from "../../components/MenuMobile";

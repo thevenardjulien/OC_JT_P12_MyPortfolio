@@ -39,9 +39,6 @@ const Signup = () => {
             <button className="SignupForm__button" type="submit">
               Submit
             </button>
-            <Link className="SignupForm__login" to="/login">
-              Already signed up ? Go to login!
-            </Link>
           </form>
         ) : (
           "Unauthorized. Please identify yourself..."

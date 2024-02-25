@@ -1,6 +1,7 @@
 @use "../../assets/scss/colors.scss" as *;
 
 .Login {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   &__label {

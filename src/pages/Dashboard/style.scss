@@ -1,11 +1,8 @@
 @use "../../assets/scss/colors.scss" as *;
 
-main {
-  padding-inline: 10%;
-}
-
 .Dashboard {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   &__title {
     text-align: center;
     text-decoration: underline;
@@ -21,7 +18,6 @@ main {
 }
 
 .modules {
-  width: 100%;
   padding: 50px;
   background-color: $tiertary-background;
   flex: 1;
@@ -29,7 +25,13 @@ main {
 }
 
 @media screen and (min-width: 1024px) {
+  .modulesWrapper {
+    max-width: 80%;
+  }
   .modules {
     max-width: fit-content;
+  }
+  .Dashboard {
+    justify-content: end;
   }
 }

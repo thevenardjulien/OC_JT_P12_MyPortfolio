@@ -3,8 +3,8 @@ import "./style.scss";
 import { toast } from "sonner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from "react";
+import Socials from "../Socials";
 
 interface MenuMobileProps {
   activeMenuMobile: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,7 +24,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ activeMenuMobile }) => {
     });
   }, [activeMenuMobile]);
   return (
-    <div className="MenuMobile">
+    <div className="MenuMobileOverlay">
       <div className="MenuMobile">
         <div>
           <FontAwesomeIcon
@@ -33,30 +33,20 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ activeMenuMobile }) => {
             onClick={() => activeMenuMobile(false)}
           />
           <div className="MenuMobile__content">
-            <NavLink to="/">01. Home</NavLink>
-            <NavLink to="/projects">02. Projects</NavLink>
-            <NavLink to="/contact">03. Contact</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
             {token !== null ? (
               <>
-                <NavLink to="/dashboard">0X. Dashboard</NavLink>
+                <NavLink to="/dashboard">Dashboard</NavLink>
                 <Link to="/" onClick={handleLogOut}>
-                  0X. Logout
+                  Logout
                 </Link>
               </>
             ) : null}
           </div>
         </div>
-        <div className="socials">
-          <NavLink to="https://github.com/thevenardjulien" target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
-          </NavLink>
-          <NavLink
-            to="https://www.linkedin.com/in/julien-thevenard-951988168/"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </NavLink>
-        </div>
+        <Socials />
       </div>
     </div>
   );

@@ -1,9 +1,11 @@
 @use "../../assets/scss/colors.scss" as *;
 
 .ContactForm {
+  margin: 0 auto;
+  background-color: rgba($color: $hr-background, $alpha: 0.025);
+
   &__fieldset {
-    padding: 50px;
-    background-color: $tiertary-background;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     border: 1px solid $hr-background;
@@ -12,21 +14,18 @@
     padding-inline: 10px;
     font-weight: 600;
     text-decoration: underline;
-  }
-  &__label {
-    padding-right: 10px;
-    margin-bottom: 5px;
+    text-underline-offset: 3px;
   }
   &__input {
-    margin-bottom: 30px;
+    width: 100%;
   }
   &__textarea {
-    margin-bottom: 10px;
+    margin-block: 20px;
     height: 150px;
   }
   &__button {
     width: 100%;
-    margin: 5px 0 0 0;
+    margin: 0;
     font-weight: 600;
   }
 }
@@ -35,4 +34,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+@media screen and (min-width: 674px) {
+  .ContactForm {
+    &__fieldset {
+      padding: 50px;
+    }
+  }
 }

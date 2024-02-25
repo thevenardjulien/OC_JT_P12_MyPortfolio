@@ -6,6 +6,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import MenuMobile from "../../components/MenuMobile";
+import Socials from "../../components/Socials";
 
 const Header = () => {
   const token = localStorage.getItem("token") || null;
@@ -24,14 +25,14 @@ const Header = () => {
     <>
       <div className="header">
         <nav className="desktop header__links">
-          <NavLink to="/">1. Home</NavLink>
-          <NavLink to="/projects">2. Projects</NavLink>
-          <NavLink to="/contact">3. Contact</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
           {token !== null ? (
             <>
-              <NavLink to="/dashboard">X. Dashboard</NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
               <Link to="/" onClick={handleLogOut}>
-                X. Logout
+                Logout
               </Link>
             </>
           ) : null}
@@ -42,17 +43,7 @@ const Header = () => {
           )}
           <FontAwesomeIcon icon={faBars} onClick={(e) => handleMenu(e)} />
         </nav>
-        <nav className="header__socials">
-          <NavLink to="https://github.com/thevenardjulien" target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
-          </NavLink>
-          <NavLink
-            to="https://www.linkedin.com/in/julien-thevenard-951988168/"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </NavLink>
-        </nav>
+        <Socials />
       </div>
     </>
   );

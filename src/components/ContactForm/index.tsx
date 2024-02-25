@@ -31,40 +31,35 @@ const ContactForm = () => {
         <legend className="ContactForm__legend">Contact Form</legend>
         <div className="UserWrapper">
           <div>
-            <label className="ContactForm__label" htmlFor="userName">
-              Name
-            </label>
             <input
               className="ContactForm__input"
               type="text"
               id="userName"
               name="userName"
+              placeholder="Name"
               required
               minLength={3}
               maxLength={126}
             />
           </div>
           <div>
-            <label className="ContactForm__label" htmlFor="email">
-              Email
-            </label>
             <input
               className="ContactForm__input"
               type="email"
               id="email"
               name="email"
+              placeholder="Email"
               required
               maxLength={126}
             />
           </div>
         </div>
-        <label className="ContactForm__label" htmlFor="message">
-          Your message :
-        </label>
+
         <textarea
           className="ContactForm__textarea"
           id="message"
           name="message"
+          placeholder="Message"
           required
         />
         <button className="ContactForm__button" type="submit">

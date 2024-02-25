@@ -3,7 +3,6 @@ import "./App.scss";
 import Hero from "./components/Hero";
 import Loader from "./components/Loader";
 import ProjectList from "./components/ProjectList";
-import SectionTitle from "./components/SectionTitle";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { getAllProjects } from "./services/projectAPI";
@@ -25,7 +24,6 @@ function App() {
       );
     } finally {
       setIsLoading(false);
-      console.log(posts);
     }
   };
 
@@ -40,7 +38,7 @@ function App() {
         <div className="mainWrapper">
           {!isLoading && posts ? (
             <>
-              <SectionTitle title="SELECTED PROJECTS" />
+              <h2 className="main-title">SELECTED PROJECTS</h2>
               <ProjectList postsList={posts} listSize="3" />
             </>
           ) : (

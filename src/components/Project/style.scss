@@ -4,35 +4,28 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
-    padding-block: 40px;
-    padding-inline: 20px;
     gap: 30px;
-
+    padding: 20px;
+    margin-block: 20px;
+    background-color: rgba($color: $hr-background, $alpha: 0.025);
     &:hover {
-      background-color: rgba($color: $hr-background, $alpha: 0.025);
+      background-color: rgba($color: $hr-background, $alpha: 0.05);
       cursor: pointer;
     }
     &:hover .Project__img {
       transform: scale(1.05);
     }
-    &:hover .Infos__title {
-      color: $main-color;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
   }
-
   &__img {
     width: 100%;
     object-fit: cover;
     aspect-ratio: 16 / 9;
-    transition: transform 400ms linear;
+    transition: transform 200ms linear;
   }
 
   .Infos {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     min-width: 50%;
     &__category {
       width: fit-content;
@@ -45,7 +38,12 @@
 
     &__title {
       font-size: 1.5rem;
-      padding-block: 20px;
+      margin-block: 20px;
+      &:hover {
+        color: $main-color;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
     }
 
     &__description {
@@ -57,26 +55,19 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
-    &__links {
-      display: flex;
-      gap: 20px;
-    }
-
-    &__link {
-      font-size: 1.2rem;
-    }
   }
 
   @media screen and (min-width: 1024px) {
-    &__content {
-      flex-wrap: nowrap;
-      padding-block: 80px;
-      padding-inline: 40px;
-    }
-
-    &__imgWrapper {
-      min-width: 50%;
+    .Project {
+      &__content {
+        flex-wrap: nowrap;
+      }
+      &__imgWrapper {
+        min-width: 40%;
+      }
+      &__img {
+        min-height: 100%;
+      }
     }
   }
 }

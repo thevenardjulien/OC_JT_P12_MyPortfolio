@@ -5,7 +5,10 @@ button {
   color: $primary-font-color;
   padding: 8px 20px;
   margin: 20px;
-  font-weight: 00;
+  font-weight: 600;
   font-size: inherit;
   border: none;
+  &:hover {
+    background-color: rgba($color: $main-color, $alpha: 0.8);
+  }
 }

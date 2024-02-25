@@ -32,7 +32,8 @@ const Projects = () => {
         <section className="contentWrapper">
           {!isLoading ? (
             <>
-              <SectionTitle title="ALL PROJECTS" />
+              <h2 className="main-title">ALL PROJECTS</h2>
+
               <ProjectList postsList={posts} listSize={Infinity} />
             </>
           ) : (

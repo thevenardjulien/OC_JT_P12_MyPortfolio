@@ -25,8 +25,6 @@ const Project: React.FC<Project> = ({
   title,
   description,
   images,
-  // github,
-  // lien,
 }) => {
   const createBlobUrl = (data: Image["data"], contentType: string) => {
     const uint8Array = new Uint8Array(Uint8Array.from(data.data));
@@ -41,9 +39,8 @@ const Project: React.FC<Project> = ({
   };
 
   return (
-    <div className="Project" onClick={handleClick}>
-      <hr className="Project__hr" />
-      <div className="Project__content">
+    <div className="Project">
+      <div className="Project__content" onClick={handleClick}>
         <div className="Project__imgWrapper">
           {images && images.length > 0 && (
             <img
@@ -64,19 +61,6 @@ const Project: React.FC<Project> = ({
           <p className="Infos__category">{category}</p>
           <h3 className="Infos__title">{title}</h3>
           <p className="Infos__description">{description}</p>
-          <br />
-          {/* <p className="Infos__links">
-            {github && (
-              <Link className="Infos__link" to={github} target="_blank">
-                <FontAwesomeIcon icon={faGithub} /> View on Github
-              </Link>
-            )}
-            {lien && (
-              <Link className="Infos__link" to={lien} target="_blank">
-                <FontAwesomeIcon icon={faLink} /> Direct Link
-              </Link>
-            )}
-          </p> */}
         </div>
       </div>
     </div>

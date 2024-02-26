@@ -3,7 +3,7 @@ import "./style.scss";
 const Skills = () => {
   const skills = [
     {
-      title: "Intégration HTML/CSS",
+      title: "HTML/CSS Integration",
       imgSrc: "/images/htmlcss.webp",
       alt: "html css",
       description: `Integration of design mockups using HTML and CSS, proficiency lies in translating visual concepts into functional and responsive web interfaces.`,
@@ -23,19 +23,19 @@ const Skills = () => {
     {
       title: "React",
       imgSrc: "/images/react.webp",
-      alt: "html-css",
+      alt: "React",
       description: `Having cultivated a solid understanding of React, my training revolves around the creation of dynamic and interactive web applications.`,
     },
     {
-      title: "Debug & optimisation",
+      title: "Debug & optimization",
       imgSrc: "/images/debug.png",
-      alt: "html-css",
+      alt: "Debug & optimization",
       description: `Focused on application debugging and optimization, emphasizing the importance of meticulous and strategic debugging.`,
     },
     {
       title: "State management",
       imgSrc: "/images/store.png",
-      alt: "html-css",
+      alt: "State management",
       description: `Proficient in state management concepts, I am familiar with frameworks such as Redux and Zustand.`,
     },
   ];

@@ -24,9 +24,15 @@ const Header = () => {
     <>
       <div className="header">
         <nav className="desktop header__links">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
+            Home
+          </NavLink>
+          <NavLink to="/projects" onClick={() => window.scrollTo(0, 0)}>
+            Projects
+          </NavLink>
+          <NavLink to="/contact" onClick={() => window.scrollTo(0, 0)}>
+            Contact
+          </NavLink>
           {token !== null ? (
             <>
               <NavLink to="/dashboard">Dashboard</NavLink>

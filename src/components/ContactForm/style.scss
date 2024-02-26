@@ -3,7 +3,9 @@
 .ContactForm {
   margin: 0 auto;
   background-color: rgba($color: $hr-background, $alpha: 0.025);
-
+  &:hover {
+    background-color: rgba($color: $hr-background, $alpha: 0.05);
+  }
   &__fieldset {
     padding: 25px;
     display: flex;
@@ -19,10 +21,18 @@
   }
   &__input {
     width: 100%;
+    &:hover,
+    &:focus {
+      outline: 2px solid $main-color;
+    }
   }
   &__textarea {
     margin-block: 20px;
     height: 150px;
+    &:hover,
+    &:focus {
+      outline: 2px solid $main-color;
+    }
   }
   &__button {
     width: 100%;
@@ -33,7 +43,6 @@
 
 .UserWrapper {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
 }
 

@@ -7,6 +7,7 @@ const Contact = () => {
     <>
       <Header />
       <main>
+        <h2 className="main-title">CONTACT ME</h2>
         <ContactForm />
       </main>
       <Footer />

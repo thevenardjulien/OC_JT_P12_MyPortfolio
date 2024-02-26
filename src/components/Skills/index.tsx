@@ -46,7 +46,7 @@ const Skills = () => {
         <div key={index} className="skillCard">
           <img className="skillCard__img" src={skill.imgSrc} alt={skill.alt} />
           <h3 className="skillCard__title">{skill.title}</h3>
-          <p>{skill.description}</p>
+          <p className="skillCard__description">{skill.description}</p>
         </div>
       ))}
     </div>

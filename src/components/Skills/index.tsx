@@ -30,7 +30,7 @@ const Skills = () => {
       title: "Debug & optimisation",
       imgSrc: "/images/debug.png",
       alt: "html-css",
-      description: `Focused on application debugging and optimization, emphasizing the importance of meticulous debugging and strategic optimization techniques.`,
+      description: `Focused on application debugging and optimization, emphasizing the importance of meticulous and strategic debugging.`,
     },
     {
       title: "State management",

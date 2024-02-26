@@ -8,6 +8,8 @@ import Header from "./layout/Header";
 import { getAllProjects } from "./services/projectAPI";
 import { toast } from "sonner";
 import Skills from "./components/Skills";
+import ContactForm from "./components/ContactForm";
+import Socials from "./components/Socials";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +51,10 @@ function App() {
           ) : (
             <Loader />
           )}
+          <div>
+            <h2 className="main-title">CONTACT ME</h2>
+            <ContactForm />
+          </div>
         </div>
       </main>
       <Footer />

@@ -42,7 +42,7 @@ const ContactForm = () => {
   return (
     <form ref={form} className="ContactForm" onSubmit={(e) => handleSubmit(e)}>
       <fieldset className="ContactForm__fieldset">
-        <legend className="ContactForm__legend">Contact Form</legend>
+        {/* <legend className="ContactForm__legend">Contact Form</legend> */}
         <div className="UserWrapper">
           <div>
             <input

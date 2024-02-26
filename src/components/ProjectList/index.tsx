@@ -7,7 +7,7 @@ const ProjectList = ({ postsList, listSize }) => {
     .reverse()
     .slice(0, listSize)
     .map((post, index: number) => (
-      <div key={index}>
+      <div key={index} className="projectList">
         <Project
           category={post.category}
           title={post.title}

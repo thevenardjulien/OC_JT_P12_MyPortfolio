@@ -9,7 +9,6 @@ import { getAllProjects } from "./services/projectAPI";
 import { toast } from "sonner";
 import Skills from "./components/Skills";
 import ContactForm from "./components/ContactForm";
-import Socials from "./components/Socials";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

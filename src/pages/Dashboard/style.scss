@@ -19,7 +19,8 @@
 
 .modules {
   padding: 50px;
-  background-color: $tiertary-background;
+  background-color: rgba($color: $hr-background, $alpha: 0.025);
+
   flex: 1;
   border: 1px solid $hr-background;
 }

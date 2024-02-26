@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import { messagePost } from "../../services/messageAPI";
 import "./style.scss";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const form = useRef(null);
@@ -16,7 +16,21 @@ const ContactForm = () => {
       message.value.trim() !== "" &&
       message.reportValidity()
     ) {
-      messagePost(userName.value, email.value, message.value);
+      emailjs
+        .sendForm("service_1sptgu6", "template_g9actwj", form.current, {
+          publicKey: "sArzFEUNT8gIWgywT",
+        })
+        .then(
+          () => {
+            toast.success("Message sent successfully!");
+          },
+          (error) => {
+            toast.error(
+              "Unable to send message. Try again later...",
+              error.text
+            );
+          }
+        );
       form.current?.reset();
     } else {
       toast.error(

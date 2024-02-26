@@ -1,0 +1,24 @@
+@use "../../assets/scss/colors.scss" as *;
+
+.skillCardWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.skillCard {
+  width: 30%;
+  padding: 50px;
+  background-color: rgba($color: $hr-background, $alpha: 0.025);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__img {
+    max-width: 200px;
+    max-height: 120px;
+  }
+  &__title {
+    margin-block: 20px;
+  }
+}

@@ -7,6 +7,7 @@ import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { getAllProjects } from "./services/projectAPI";
 import { toast } from "sonner";
+import Skills from "./components/Skills";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,11 +37,15 @@ function App() {
       <Hero />
       <main>
         <div className="mainWrapper">
+          <div>
+            <h2 className="main-title">MY SKILLS</h2>
+            <Skills />
+          </div>
           {!isLoading && posts ? (
-            <>
+            <div>
               <h2 className="main-title">SELECTED PROJECTS</h2>
               <ProjectList postsList={posts} listSize="3" />
-            </>
+            </div>
           ) : (
             <Loader />
           )}

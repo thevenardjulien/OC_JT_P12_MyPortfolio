@@ -91,7 +91,7 @@ const ProjectDetails = () => {
                         to={post[0].github}
                         target="_blank"
                       >
-                        <FontAwesomeIcon icon={faGithub} /> View on Github
+                        <FontAwesomeIcon icon={faGithub} /> Discover on Github
                       </Link>
                     </div>
                   )}

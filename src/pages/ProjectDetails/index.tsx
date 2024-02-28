@@ -85,23 +85,15 @@ const ProjectDetails = () => {
                 </div>
                 <div className="postWrapper__links">
                   {post[0].github && (
-                    <div className="postWrapper__github">
-                      <Link
-                        className="Infos__link"
-                        to={post[0].github}
-                        target="_blank"
-                      >
+                    <div className="postWrapper__link">
+                      <Link to={post[0].github} target="_blank">
                         <FontAwesomeIcon icon={faGithub} /> Discover on Github
                       </Link>
                     </div>
                   )}
                   {post[0].lien && (
                     <div className="postWrapper__link">
-                      <Link
-                        className="Infos__link"
-                        to={post[0].lien}
-                        target="_blank"
-                      >
+                      <Link to={post[0].lien} target="_blank">
                         <FontAwesomeIcon icon={faLink} /> Direct Link
                       </Link>
                     </div>
@@ -109,29 +101,31 @@ const ProjectDetails = () => {
                 </div>
               </div>
               <div className="postWrapper__proposals">
-                You can also check out my other projects:
-                {proposals &&
-                  proposals.map((proposal, index) => (
-                    <div
-                      key={index}
-                      onClick={(e) => handleClick(e)}
-                      className="proposalWrapper"
-                    >
-                      {proposal.images && proposal.images.length > 0 && (
-                        <img
-                          className="postWrapper__proposalsImg"
-                          src={createBlobUrl(
-                            proposal.images[0].data,
-                            proposal.images[0].contentType
-                          )}
-                          alt={proposal.title}
-                        />
-                      )}
-                      <span className="proposalWrapper__text">
-                        {proposal.title}
-                      </span>
-                    </div>
-                  ))}
+                <div className="postWrapper__also">You may also like :</div>
+                <div className="postWrapper__projects">
+                  {proposals &&
+                    proposals.map((proposal, index) => (
+                      <div
+                        key={index}
+                        onClick={(e) => handleClick(e)}
+                        className="proposalWrapper"
+                      >
+                        {proposal.images && proposal.images.length > 0 && (
+                          <img
+                            className="postWrapper__proposalsImg"
+                            src={createBlobUrl(
+                              proposal.images[0].data,
+                              proposal.images[0].contentType
+                            )}
+                            alt={proposal.title}
+                          />
+                        )}
+                        <span className="proposalWrapper__text">
+                          {proposal.title}
+                        </span>
+                      </div>
+                    ))}
+                </div>
               </div>
             </div>
           </>

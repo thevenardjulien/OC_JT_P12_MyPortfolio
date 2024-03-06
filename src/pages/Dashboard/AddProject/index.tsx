@@ -11,24 +11,43 @@ const AddProject = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { category, title, description, image, github, lien } = form.current;
+    const {
+      category,
+      title,
+      description,
+      mainImage,
+      galleryImages,
+      github,
+      lien,
+    } = form.current;
 
     const formData = new FormData();
     formData.append("category", category.value);
     formData.append("title", title.value);
     formData.append("description", description.value);
-    formData.append("images", image.files[0]);
+    formData.append("images", mainImage.files[0]);
+
+    for (let i = 0; i < galleryImages.files.length; i++) {
+      formData.append("gallery", galleryImages.files[i]);
+    }
+
     formData.append("github", github.value);
     formData.append("lien", lien.value);
 
-    addProject(formData, token);
-    form.current?.reset();
-    navigate("/");
+    addProject(formData, token)
+      .then(() => {
+        form.current?.reset();
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error adding project:", error);
+      });
   };
+
   return (
     <form ref={form} className="addProject" onSubmit={(e) => handleSubmit(e)}>
       <label className="addProject__label" htmlFor="category">
-        Category
+        Catégorie
       </label>
       <input
         className="addProject__input"
@@ -38,7 +57,7 @@ const AddProject = () => {
         required
       />
       <label className="addProject__label" htmlFor="title">
-        Title
+        Titre
       </label>
       <input
         className="addProject__input"
@@ -56,17 +75,32 @@ const AddProject = () => {
         id="description"
         required
       ></textarea>
-      <label className="addProject__label" htmlFor="imageUrl">
-        ImageUrl
+
+      <label className="addProject__label" htmlFor="mainImage">
+        Image Principale
       </label>
       <input
         className="addProject__input"
         type="file"
-        name="image"
-        id="image"
+        name="mainImage"
+        id="mainImage"
         accept="image/*"
         required
       />
+
+      <label className="addProject__label" htmlFor="galleryImages">
+        Galerie d'Images (jusqu'à 5 fichiers)
+      </label>
+      <input
+        className="addProject__input"
+        type="file"
+        name="galleryImages"
+        id="galleryImages"
+        accept="image/*"
+        multiple
+        required
+      />
+
       <label className="addProject__label" htmlFor="github">
         Repo Github
       </label>
@@ -81,7 +115,7 @@ const AddProject = () => {
       </label>
       <input className="addProject__input" type="text" name="lien" id="lien" />
       <button className="addProject__button" type="submit">
-        Submit
+        Soumettre
       </button>
     </form>
   );

@@ -83,22 +83,26 @@ const ProjectDetails = () => {
                 <div className="postWrapper__description">
                   {post[0].description}
                 </div>
-                <div className="postWrapper__links">
-                  {post[0].github && (
-                    <div className="postWrapper__link">
-                      <Link to={post[0].github} target="_blank">
-                        <FontAwesomeIcon icon={faGithub} /> Discover on Github
-                      </Link>
+                {post[0].github ||
+                  (post[0].lien && (
+                    <div className="postWrapper__links">
+                      {post[0].github && (
+                        <div className="postWrapper__link">
+                          <Link to={post[0].github} target="_blank">
+                            <FontAwesomeIcon icon={faGithub} /> Discover on
+                            Github
+                          </Link>
+                        </div>
+                      )}
+                      {post[0].lien && (
+                        <div className="postWrapper__link">
+                          <Link to={post[0].lien} target="_blank">
+                            <FontAwesomeIcon icon={faLink} /> Direct Link
+                          </Link>
+                        </div>
+                      )}
                     </div>
-                  )}
-                  {post[0].lien && (
-                    <div className="postWrapper__link">
-                      <Link to={post[0].lien} target="_blank">
-                        <FontAwesomeIcon icon={faLink} /> Direct Link
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                  ))}
               </div>
               <div className="postWrapper__proposals">
                 <div className="postWrapper__also">You may also like :</div>

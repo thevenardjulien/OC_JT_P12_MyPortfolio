@@ -40,7 +40,7 @@ const AddProject = () => {
         navigate("/");
       })
       .catch((error) => {
-        console.error("Error adding project:", error);
+        console.error("Erreur lors de l'ajout du projet :", error);
       });
   };
 
